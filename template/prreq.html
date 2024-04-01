@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="rlogo.png">
+</head>
+<style>
+    #mainNavbar {
+    }
+
+    .navbar-dark .navbar-brand {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar-nav .nav-link {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .display-4 {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .lead {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar.scrolled {
+        background: rgb(34, 31, 31);
+        transition: background 500ms;
+    }
+
+    .font-weight-light {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .pt {
+        color: #222;
+        font-family: montserrat, Sans-serif;
+        
+        line-height: 1.2em;
+    }
+
+    h2 {
+        font-family: fjalla one, sans-serif;
+        font-size: 3.5em;
+        
+        font-style: normal;
+        line-height: 1.23em;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 6.15rem;
+        margin-bottom: 2.1rem;
+    }
+    .equal-height {
+        opacity: 0;
+        transform: translateY(90px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .equal-height.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .ns {
+        opacity: 0;
+        transform: translateX(80px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .ns.fade-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hs-responsive-embed-youtube {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        padding-top: 25px;
+    }
+    .hs-responsive-embed-youtube iframe {
+        position: absolute;
+        width: 100%!important;
+        height: 100%!important;
+    }
+
+    .payment-box{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-color: #1B998B;
+  border-radius: 2.5rem;
+  box-shadow: 0.25rem 0.25rem 1rem 0.5rem #1D1A30;
+  
+  
+  /*Size settings*/
+  min-height: 20rem;
+  max-width: 20rem;
+  
+  /*Content align*/
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.payment-title{  
+  font-weight:bold;
+  font-size: 2rem;
+  color: #C5D86D;
+}
+
+.lock-handle-outer{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-bottom: none;
+  border-color: #1B998B;
+  border-radius: 1rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.2rem #1D1A30;
+  
+  /*Size settings*/
+  min-height: 10rem;
+  max-width: 15rem;
+  
+  /*Content align*/
+  justify-content: center;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.lock-handle-inner{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-bottom: none;
+  border-color: #1B998B;
+  border-radius: 1rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.2rem #1D1A30;
+  
+  /*Size settings*/
+  min-height: 10rem;
+  max-width: 8rem;
+  
+  /*Content align*/
+  justify-content: bottom;
+  margin: auto;
+  vertical-align:bottom;
+}
+
+/*Buttons*/
+.donate-btn{  
+  /*Size settings*/
+  min-width:15rem;
+  min-height:3rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #1B998B;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem #1D1A30;
+  
+  /*Text settings*/
+  font-weight:bold;
+  font-size: 1rem;
+  color: #C5D86D;
+  cursor:pointer;
+  
+}
+
+.donate-btn:hover{
+  background-color: #C5D86D;
+  color:#F46036;
+  transition: 0.1s;
+  box-shadow: 0.1rem 0.1rem 1rem 0.5rem #1D1A30;
+}
+.donate-btn:active{
+  background-color: #1D1A30;
+  color:#F46036;
+  transition: 0.1s;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem #1D1A30;
+}
+
+/*Key hole items*/
+
+.key-hole{
+  /*Circle*/
+  border: 0.35rem solid;;
+  border-color: #1B998B;
+  border-bottom: 0rem;
+  width: 3rem;
+  min-height:3rem;
+  border-radius: 2rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem 1rem #1D1A30;
+  
+  
+  /*Content align*/
+  margin: auto;
+  vertical-align:middle;
+}
+
+.key-box{
+  /*Triangle*/
+  border: 0.35rem solid;;
+  border-color: #1B998B;
+  border-top: 0rem;
+  width: 2rem;
+  min-height:3rem;
+  border-radius: 1rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem 0.5rem #1D1A30;
+  
+  
+  /*Content align*/
+  margin: auto;
+  vertical-align:middle;
+}
+
+
+.keyarea{
+  padding: 1rem;
+}
+
+
+
+
+
+
+.dropbtn {
+  background: transparent;
+  color: white;
+  
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 30%;
+  border-radius: 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+
+
+.donate {
+  background: #005068;
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%), -webkit-linear-gradient(left, #1595bf 0%, #0e7d91 50%, #147995 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%), linear-gradient(to right, #1c7a8f 0%, #2f6b83 50%, #1e84ad 100%);
+  background-position: 0 0;
+  background-size: 200% 100%;
+  border-radius: 4px;
+  color: #fff;
+  padding: 15px 65px 15px 15px;
+  text-shadow: 1px 1px 5px #666;
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
+}
+.donate:after {
+  border-left: 1px solid #1c99b9;
+  color: #003527;
+  content: "\f004";
+  font: 20px "FontAwesome";
+  padding: 10px 0;
+  padding-left: 15px;
+  position: absolute;
+  right: 16px;
+  top: 7px;
+  -webkit-transition: all 600ms 200ms;
+  transition: all 600ms 200ms;
+}
+.donate:hover {
+  background-position: -100% 0;
+  color: white;
+}
+.donate:hover:after {
+  border-left: 1px solid #007382;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: no-repeat black;
+    
+}
+  
+
+.u-loading {
+	width: 128px;
+	height: 128px;
+	
+	margin: 48px;
+     
+}
+.u-loading__symbol {
+	background-color: transparent;
+	padding: 8px;
+	animation: loading 3s infinite;
+	border-radius: 5px;
+     
+}
+.u-loading__symbol img {
+     
+    left: 0px;
+	display: block;
+	max-width: 100%;
+	animation: loading-icon 3s infinite;
+  
+}
+ @keyframes loading {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 background-color: transparent;
+	}
+	 16% {
+		 background-color: transparent;
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+		 background-color: transparent;
+	}
+	 65% {
+		 background-color: transparent;
+	}
+	 66% {
+		 background-color: transparent;
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(-180deg);
+	}
+}
+ @keyframes loading-icon {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 16% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 65% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 66% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+}
+.slider-container {
+    min-height: 70%;
+}
+
+
+
+.container {
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em; 
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+.brand {
+	text-align: center;
+}
+
+.brand span {
+	color: #fff;
+}
+
+.wrapper {
+	box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+}
+
+.wrapper > * {
+	padding: 1em;
+}
+
+.company-info {
+	background: #7ebcf2;
+}
+
+.company-info h3, .company-info ul {
+	text-align: center;
+	margin: 0 0 1rem 0;
+}
+
+.contact {
+	background: #f9feff;
+}
+
+/*================
+	FORM STYLES
+==================*/
+.contact form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+}
+
+.contact form label {
+	display: block;
+}
+
+.contact form p {
+	margin: 0;
+}
+
+.contact form .full {
+	grid-column: 1 / 3;
+}
+
+.contact form button, 
+.contact form input, 
+.contact form textarea {
+	width: 100%;
+	padding: 1em;
+	border: 1px solid #7ebcf2;
+}
+
+.contact form textarea {
+	resize: none;
+}
+
+.contact form button {
+	background: #7ebcf2;
+	border: 0;
+	text-transform: uppercase;
+}
+
+.contact form button:hover, .contact form button:focus {
+	background: #7ebcf2;
+	color: #fff;
+	outline: 0;
+	transition: background-color 2s ease-out;
+} 
+
+/*=================
+	LARGE SCREENS
+===================*/
+@media (min-width: 700px) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+	}
+
+	.wrapper > * {
+		padding: 2em; 
+	}
+
+	.company-info h3, .company-info ul, .brand {
+		text-align: left;
+	}
+}
+
+.slider-title {
+            
+            margin-top: 70%;
+        }
+    @media only screen and (min-width : 1024px) {
+     
+        .slider-title {
+            font-size: 70px;
+            margin-top: 15%;
+        }
+        .dropdown-content {
+            width: 200px;
+        }
+    }
+
+
+
+</style>
+<body>
+    <nav id="bar" class=" fixed-top">
+        <nav class="nav">
+            <div class="" style="min-width: 100%;">
+                <div class="logo">
+                    <a href="#"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "  width="100" height="5"></a>
+                </div>
+                
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks" >
+                        <li><a href="{{ url_for('index') }}" style="font-size: 18px;">Home</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Who are we</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('history') }}"  style="color: black; font-size: 52%">Our History</a>
+                                  <a href="{{ url_for('service') }}"  style="color: black; font-size: 52%">Our Services</a>
+                                  <a href="{{ url_for('mission') }}"  style="color: black; font-size: 52%">Our Mission</a>
+                                  <a href="{{ url_for('values') }} "  style="color: black; font-size: 52%">Our Values</a>
+                                  <a href="{{ url_for('pr') }}"    style="color: black; font-size: 52%">Our Priorities</a>
+                                  <a href="{{ url_for('pastor') }}"  style="color: black; font-size: 52%">Our Pastor</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Sermon</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('vid') }}" target="tab" style="color: black; font-size: 52%">Video Sermon</a>
+                                  <a href="{{ url_for('pod') }}" target="tab" style="color: black; font-size: 52%">Podcast Sermon</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Connect</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('prreq') }}" target="tab" style="color: black; font-size: 52%">Prayer request</a>
+                                  <a href="{{ url_for('ytlive') }}" target="tab" style="color: black; font-size: 52%">Live streaming</a>
+                                  <a href=" {{ url_for('activities') }}" target="tab" style="color: black; font-size: 52%">Activities</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="{{ url_for('contact') }}" target="tab" style="font-size: 18px;">Contact</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="" style="float: right;">
+                   
+                    <button><a href="{{ url_for('donate') }}" style="color: black; text-decoration: none;">Donate</a></button>
+                    
+                </div>
+
+                <span class="navTrigger" style="margin-top: 6%; margin-right: 23%;">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>
+    </nav>
+    
+    <section>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper" style="background-size: cover;">
+                <!-- Slides -->
+                <div class="swiper-slide slide-1">
+                    <div class="container">
+                        <div class="slider-container">
+                            <div class="animated-area">
+                                <p class="slider-title cssanimation sequence leFadeInLeft pt" style="color: white;">Prayer Request</p>
+                            </div>
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+              
+          
+                <!-- ... Other slides go here ... -->
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev" style="color: white;"></div>
+            <div class="swiper-button-next" style="color: white;"></div>
+        </div>
+    </section>
+    
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#bar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
+
+
+
+    <div class="container ns">
+		<span class="brand" style="font-size: 50px; font-weight: bolder;">
+			With God All Things Are Possible
+            <h5>Matthew 19:26</h5>
+        </span>
+       
+        
+        <div style="width: 80%; padding: 5px;"><span style="font-style: italic; text-align: center; font-size: medium;">Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.
+            And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.</span> <h5>Philippians 4: 6-7</h5></div>
+            <br>
+		<div class="wrapper">
+			<div class="company-info">
+				<h3>RCCG Jesus House Mobile</h3>
+				<ul style="font-size: 15px;">
+					<li><i class="fa fa-road"></i>444 Azalea Road, Suite C, Mobile, AL 36609</li>
+					<li><i class="fa fa-phone"></i>+251-378-5182</li>
+					<li><i class="fa fa-envelope"></i> info@rccgmobile.org</li>
+				</ul>
+			</div>
+			<div class="contact">
+				<h3>Email Us</h3>
+				<form>
+					<p>
+						<label>First Name</label>
+						<input type="text" name="name">
+					</p>
+					<p>
+						<label>Second Name</label>
+						<input type="text" name="sname">
+					</p>
+					<p>
+						<label>Email Address</label>
+						<input type="email" name="email">
+					</p>
+					<p>
+						<label>Phone Number</label>
+						<input type="text" name="phone">
+					</p>
+					<p class="full">
+						<label>Prayer request</label>
+						<textarea name="message" rows="5"></textarea>
+					</p>
+					<p class="full">
+						<button type="submit">Submit</button>
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+    <button class="back-to-top" type="button"></button>
+
+   <footer style="font-size: 16px;">
+        <div>
+             <span class="logo"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "></span>
+        </div>
+    
+        <div class="row">
+             <div class="kol">                
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Get in Touch</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href=""><span><i class="fa fa-inbox"></i> info@rccgmobile.org</span></a></li>
+                     <li><a href=""><span><i class="fa fa-phone"></i> +251-378-5182</span></a></li>
+                 </ul>
+             </div>
+             <div class="kol">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Home</span>
+                 </div>
+                <ul class="footer-cat-links" style="margin: 0 0em 0px 0em;">
+                     <li><a href="{{ url_for('history') }}"><span>Our History</span></a></li>
+                     <li><a href="{{ url_for('service') }}"><span>Our Services</span></a></li>
+                     <li><a href="{{ url_for('mission') }}"><span>Our Mission</span></a></li>
+                     <li><a href="{{ url_for('pr') }}"><span>Our Priorities</span></a></li>
+                     <li><a id="values-link" href="{{ url_for('values') }}" style="cursor: pointer; pointer-events: all;">Our Values</a></li>
+                     <li><a href="{{ url_for('pastor') }}"><span>Our Pastor</span></a></li>
+                    
+                </ul>
+             </div>
+             <div class="kol">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Quick Links</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href="{{ url_for('donate') }}"><span>Donate</span></a></li>
+                     <li><a href="{{ url_for('vid') }}"><span>Video Sermon</span></a></li>
+                     <li><a href="{{ url_for('pod') }}"><span>Podcast Sermon</span></a></li>
+                     <li><a href="{{ url_for('activities') }}"><span>Activities</span></a></li>
+                     <li><a href="{{ url_for('gallery') }}"><span>Gallery</span></a></li>
+                     <li><a href="{{ url_for('contact') }}"><span>Contact Us</span></a></li>
+                 </ul>
+             </div>
+             <div class="kol" id="newsletter">
+                 <span> RCCG Jesus House Mobile.</span>
+                 <form id="subscribe">
+                     <input type="email" id="subscriber-email" placeholder="Enter Email Address"/>
+                     <input type="submit" value="Subscribe" id="btn-scribe"/>
+                 </form>
+                 
+                 <div class="social-links social-2">
+                     <a href=""><i class="fa fa-facebook-f"></i></a>
+                     <a href=""><i class="fa fa-twitter"></i></a>
+                     <a href=""><i class="fa fa-youtube"></i></a>
+                     
+                 </div>
+    
+                 <div id="address">
+                     <span>Church Location</span>
+                     <ul>
+                         <li>
+                             <i class="fa fa-building"></i>
+                             
+                                444 Azalea Rd, Ste C, Mobile, AL 36609
+                         </li>
+                         
+                     </ul>
+                 </div>
+                 
+             </div>
+             <div class="social-links social-1 colu">
+                 <a href=""><i class="fa fa-facebook-f"></i></a>
+                 <a href=""><i class="fa fa-twitter"></i></a>
+                 <a href=""><i class="fa fa-youtube"></i></a>
+                 
+             </div>
+        </div>
+        <div id="copyright">
+            &copy; 2024 All Rights Reserved. RCCG Jesus House Mobile.
+        </div>
+     
+    </footer>
+
+    <script>
+        function footerToggle(footerBtn) {
+            $(footerBtn).toggleClass("btnActive");
+            $(footerBtn).next().toggleClass("active");
+        }
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true,
+                spaceBetween: 50,
+                speed: 1000,
+                effect: 'fade',
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 50) {
+                    $('.nav').addClass('affix');
+                    console.log("OK");
+                } else {
+                    $('.nav').removeClass('affix');
+                }
+            });
+
+            $(window).on('load ', function () {
+                $('.loader').fadeOut(3000);
+            });
+            
+        
+
+
+            $('.navTrigger').click(function () {
+                $(this).toggleClass('active');
+                console.log("Clicked menu");
+                $("#mainListDiv").toggleClass("show_list");
+                $("#mainListDiv").fadeIn();
+            });
+
+            function checkVisible() {
+                var windowHeight = $(window).height();
+                var scrollPos = $(document).scrollTop();
+
+                $('.equal-height').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+                $('.ns').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+            }
+
+            // Initial check
+            checkVisible();
+
+            // Check when scrolling
+            $(document).scroll(function () {
+                checkVisible();
+            });
+
+        });
+
+    </script>
+        <script>
+            // Back to top
+            var amountScrolled = 200;
+            var amountScrolledNav = 25;
+      
+            $(window).scroll(function() {
+              if ( $(window).scrollTop() > amountScrolled ) {
+                $('button.back-to-top').addClass('show');
+              } else {
+                $('button.back-to-top').removeClass('show');
+              }
+            });
+      
+            $('button.back-to-top').click(function() {
+              $('html, body').animate({
+                scrollTop: 0
+              }, 800);
+              return false;
+            });
+        </script>
+</body>
+</html>

@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+   
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="rlogo.png">
+</head>
+<style>
+    #mainNavbar {
+    }
+
+    .navbar-dark .navbar-brand {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar-nav .nav-link {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .display-4 {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .lead {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar.scrolled {
+        background: rgb(34, 31, 31);
+        transition: background 500ms;
+    }
+
+    .font-weight-light {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .pt {
+        color: #222;
+        font-family: montserrat, Sans-serif;
+        
+        line-height: 1.2em;
+    }
+
+    h2 {
+        font-family: fjalla one, sans-serif;
+        font-size: 3.5em;
+        
+        font-style: normal;
+        line-height: 1.23em;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 6.15rem;
+        margin-bottom: 2.1rem;
+    }
+    .equal-height {
+        opacity: 0;
+        transform: translateY(90px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .equal-height.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .ns {
+        opacity: 0;
+        transform: translateX(80px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .ns.fade-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hs-responsive-embed-youtube {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        padding-top: 25px;
+    }
+    .hs-responsive-embed-youtube iframe {
+        position: absolute;
+        width: 100%!important;
+        height: 100%!important;
+    }
+
+
+    .slider-title {
+            
+            margin-top: 70%;
+        }
+    @media only screen and (min-width : 1024px) {
+     
+        .slider-title {
+            font-size: 50px;
+            margin-top: 20%;
+        }
+        .dropdown-content {
+            width: 200px;
+        }
+    }
+
+
+    .payment-box{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-color: #1B998B;
+  border-radius: 2.5rem;
+  box-shadow: 0.25rem 0.25rem 1rem 0.5rem #1D1A30;
+  
+  
+  /*Size settings*/
+  min-height: 20rem;
+  max-width: 20rem;
+  
+  /*Content align*/
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.payment-title{  
+  font-weight:bold;
+  font-size: 2rem;
+  color: #C5D86D;
+}
+
+.lock-handle-outer{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-bottom: none;
+  border-color: #1B998B;
+  border-radius: 1rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.2rem #1D1A30;
+  
+  /*Size settings*/
+  min-height: 10rem;
+  max-width: 15rem;
+  
+  /*Content align*/
+  justify-content: center;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.lock-handle-inner{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-bottom: none;
+  border-color: #1B998B;
+  border-radius: 1rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.2rem #1D1A30;
+  
+  /*Size settings*/
+  min-height: 10rem;
+  max-width: 8rem;
+  
+  /*Content align*/
+  justify-content: bottom;
+  margin: auto;
+  vertical-align:bottom;
+}
+
+/*Buttons*/
+.donate-btn{  
+  /*Size settings*/
+  min-width:15rem;
+  min-height:3rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #1B998B;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem #1D1A30;
+  
+  /*Text settings*/
+  font-weight:bold;
+  font-size: 1rem;
+  color: #C5D86D;
+  cursor:pointer;
+  
+}
+
+.donate-btn:hover{
+  background-color: #C5D86D;
+  color:#F46036;
+  transition: 0.1s;
+  box-shadow: 0.1rem 0.1rem 1rem 0.5rem #1D1A30;
+}
+.donate-btn:active{
+  background-color: #1D1A30;
+  color:#F46036;
+  transition: 0.1s;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem #1D1A30;
+}
+
+/*Key hole items*/
+
+.key-hole{
+  /*Circle*/
+  border: 0.35rem solid;;
+  border-color: #1B998B;
+  border-bottom: 0rem;
+  width: 3rem;
+  min-height:3rem;
+  border-radius: 2rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem 1rem #1D1A30;
+  
+  
+  /*Content align*/
+  margin: auto;
+  vertical-align:middle;
+}
+
+.key-box{
+  /*Triangle*/
+  border: 0.35rem solid;;
+  border-color: #1B998B;
+  border-top: 0rem;
+  width: 2rem;
+  min-height:3rem;
+  border-radius: 1rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem 0.5rem #1D1A30;
+  
+  
+  /*Content align*/
+  margin: auto;
+  vertical-align:middle;
+}
+
+
+.keyarea{
+  padding: 1rem;
+}
+
+
+
+
+
+
+.dropbtn {
+  background: transparent;
+  color: white;
+  
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 30%;
+  border-radius: 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;color: rgb(255, 189, 17);}
+
+.dropdown:hover .dropbtn {color: rgb(255, 189, 17);}
+
+
+.donate {
+  background: #005068;
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%), -webkit-linear-gradient(left, #1595bf 0%, #0e7d91 50%, #147995 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%), linear-gradient(to right, #1c7a8f 0%, #2f6b83 50%, #1e84ad 100%);
+  background-position: 0 0;
+  background-size: 200% 100%;
+  border-radius: 4px;
+  color: #fff;
+  padding: 15px 65px 15px 15px;
+  text-shadow: 1px 1px 5px #666;
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
+}
+.donate:after {
+  border-left: 1px solid #1c99b9;
+  color: #003527;
+  content: "\f004";
+  font: 20px "FontAwesome";
+  padding: 10px 0;
+  padding-left: 15px;
+  position: absolute;
+  right: 16px;
+  top: 7px;
+  -webkit-transition: all 600ms 200ms;
+  transition: all 600ms 200ms;
+}
+.donate:hover {
+  background-position: -100% 0;
+  color: white;
+}
+.donate:hover:after {
+  border-left: 1px solid #007382;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: no-repeat black;
+    
+}
+  
+
+.u-loading {
+	width: 128px;
+	height: 128px;
+	
+	margin: 48px;
+     
+}
+.u-loading__symbol {
+	background-color: transparent;
+	padding: 8px;
+	animation: loading 3s infinite;
+	border-radius: 5px;
+     
+}
+.u-loading__symbol img {
+     
+    left: 0px;
+	display: block;
+	max-width: 100%;
+	animation: loading-icon 3s infinite;
+  
+}
+ @keyframes loading {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 background-color: transparent;
+	}
+	 16% {
+		 background-color: transparent;
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+		 background-color: transparent;
+	}
+	 65% {
+		 background-color: transparent;
+	}
+	 66% {
+		 background-color: transparent;
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(-180deg);
+	}
+}
+ @keyframes loading-icon {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 16% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 65% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 66% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+}
+
+.slide-1 {
+    background: url("pr.jpg");
+    background-size:cover;
+    
+    
+   
+}
+.slider-container {
+    min-height: 100%;
+}
+
+.sc_services_item_text:hover{
+    color: white;
+}
+
+.slider-container {
+    min-width: 100%;
+}
+
+
+.contact_us {
+    background-color: #f1f1f1;
+    padding: 120px 0px;
+}
+
+.contact_inner {
+    background-color: #fff;
+    position: relative;
+    box-shadow: 20px 22px 44px #cccc;
+    border-radius: 25px;
+}
+
+.contact_field {
+    padding: 60px 340px 90px 100px;
+}
+
+.right_conatct_social_icon {
+    height: 100%;
+}
+
+.contact_field h3 {
+    color: #000;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact_field p {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+}
+
+.contact_field .form-control {
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.contact_field .form-control:focus {
+    box-shadow: none;
+    outline: none;
+    border-bottom: 2px solid #1325e8;
+}
+
+.contact_field .form-control::placeholder {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.contact_info_sec {
+    position: absolute;
+    background-color: #2d2d2d;
+    right: 1px;
+    top: 18%;
+    height: 340px;
+    width: 340px;
+    padding: 40px;
+    border-radius: 25px 0 0 25px;
+    color: white;
+}
+
+.contact_info_sec h4 {
+    letter-spacing: 1px;
+    padding-bottom: 15px;
+}
+
+.info_single {
+    margin: 30px 0px;
+}
+
+.info_single i {
+    margin-right: 15px;
+}
+
+.info_single span {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+button.contact_form_submit {
+    background: #1c99b9;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.socil_item_inner li {
+    list-style: none;
+}
+
+.socil_item_inner li a {
+    color: #fff;
+    margin: 0px 15px;
+    font-size: 14px;
+}
+
+.socil_item_inner {
+    padding-bottom: 10px;
+}
+
+.map_sec {
+    padding: 50px 0px;
+}
+
+.map_inner h4, .map_inner p {
+    color: #000;
+    text-align: center;
+}
+
+.map_inner p {
+    font-size: 13px;
+}
+
+.map_bind {
+    margin-top: 50px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+/* Responsive styles for mobile devices */
+@media only screen and (max-width: 767px) {
+    .contact_field {
+        padding: 30px;
+    }
+
+    .contact_info_sec {
+        position: static;
+        margin-top: 30px;
+        width: auto;
+        border-radius: 25px;
+        padding: 20px;
+    }
+
+    .contact_info_sec h4 {
+        font-size: 16px;
+    }
+
+    .info_single {
+        margin: 15px 0;
+    }
+
+    .info_single span {
+        font-size: 12px;
+    }
+
+    button.contact_form_submit {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .socil_item_inner li a {
+        font-size: 16px;
+    }
+
+    .map_inner h4, .map_inner p {
+        font-size: 16px;
+    }
+}
+
+</style>
+<body>
+    <nav id="bar" class=" fixed-top">
+        <nav class="nav">
+            <div class="" style="min-width: 100%;">
+                <div class="logo">
+                    <a href="#"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "  width="100" height="5"></a>
+                </div>
+                
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks" >
+                        <li><a href="{{ url_for('index') }}" style="font-size: 18px;">Home</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Who are we</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('history') }}"  style="color: black; font-size: 52%">Our History</a>
+                                  <a href="{{ url_for('service') }}"  style="color: black; font-size: 52%">Our Services</a>
+                                  <a href="{{ url_for('mission') }}"  style="color: black; font-size: 52%">Our Mission</a>
+                                  <a href="{{ url_for('values') }} "  style="color: black; font-size: 52%">Our Values</a>
+                                  <a href="{{ url_for('pr') }}"    style="color: black; font-size: 52%">Our Priorities</a>
+                                  <a href="{{ url_for('pastor') }}"  style="color: black; font-size: 52%">Our Pastor</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Sermon</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('vid') }}" target="tab" style="color: black; font-size: 52%">Video Sermon</a>
+                                  <a href="{{ url_for('pod') }}" target="tab" style="color: black; font-size: 52%">Podcast Sermon</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Connect</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('prreq') }}" target="tab" style="color: black; font-size: 52%">Prayer request</a>
+                                  <a href="{{ url_for('ytlive') }}" target="tab" style="color: black; font-size: 52%">Live streaming</a>
+                                  <a href=" {{ url_for('activities') }}" target="tab" style="color: black; font-size: 52%">Activities</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="{{ url_for('contact') }}" target="tab" style="font-size: 18px;">Contact</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="" style="float: right;">
+                   
+                    <button><a href="{{ url_for('donate') }}" style="color: black; text-decoration: none;">Donate</a></button>
+                    
+                </div>
+
+                <span class="navTrigger" style="margin-top: 6%; margin-right: 23%;">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>
+    </nav>
+
+    <section>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper" style="background-size: cover;">
+                <!-- Slides -->
+                <div class="swiper-slide slide-1">
+                    <div class="container">
+                        <div class="slider-container">
+                            <div class="animated-area">
+                                <p class="slider-title cssanimation sequence leFadeInLeft pt" style="color: white;">Contact Us</p>
+                            </div>
+                           
+                            <div id="space">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ... Other slides go here ... -->
+            </div>
+            <!-- If we need navigation buttons -->
+            
+        </div>
+    </section>
+    <button class="back-to-top" type="button"></button>
+
+ 
+    <section class="contact_us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="contact_inner">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="contact_form_inner">
+                                    <div class="contact_field">
+                                        <h3>Contact Us</h3>
+                                        <p>We invite you to come just as you are and be part of this community of people who are striving together to discover God’s purpose and plan for their lives!</p>
+                                        <input style="margin: 8px;" type="text" class="form-control form-group" placeholder="Name" />
+                                        <input style="margin: 8px;" type="text" class="form-control form-group" placeholder="Email" />
+                                        <input style="margin: 8px;" type="text" class="form-control form-group" placeholder="Phone Number" />
+                                        <input style="margin: 8px;" type="text" class="form-control form-group" placeholder="Subject" />
+                                        <textarea class="form-control form-group" placeholder="Message"></textarea>
+                                        <button class="contact_form_submit">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="right_conatct_social_icon d-flex align-items-end">
+                                   <div class="socil_item_inner d-flex">
+                                      <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact_info_sec">
+                            <h4>Contact Info</h4>
+                            <div class="d-flex info_single align-items-center">
+                                <i class="fa fa-phone"></i>
+                                <span>+251-378-5182</span>
+                            </div>
+                            <div class="d-flex info_single align-items-center">
+                                <i class="fa fa-inbox"></i>
+                                <span> info@rccgmobile.org</span>
+                            </div>
+                            <div class="d-flex info_single align-items-center">
+                                <i class="fa fa-building"></i>
+                                <span>RCCG Jesus House Mobile,
+                                    44 Azalea Road, Suite C
+                                    Mobile, AL 36609.</span>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="map_sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="map_inner">
+                        <h4 style="text-align: center; font-weight: bold; font-size: 35px;">Find Us on Google Map</h4>
+                        
+                        <div class="map_bind">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3431.939723495493!2d-88.1549097!3d30.6638258!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x889a4d234847ec6d%3A0x42acd0cf17f05b68!2s444%20Azalea%20Rd%2C%20Mobile%2C%20AL%2036609%2C%20USA!5e0!3m2!1sen!2sng!4v1710945137666!5m2!1sen!2sng" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    
+
+
+    <div class="loader" style="display: flex; align-items: center; justify-content: center;">
+        <div class="u-loading">
+            <div class="u-loading__symbol" >
+              <img src=“{{url_for(‘static’, filename=‘rccg.png’)}}” >
+            </div>
+        </div>
+    </div>
+
+    <footer style="font-size: 16px;">
+        <div>
+             <span class="logo"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "></span>
+        </div>
+    
+        <div class="row">
+             <div class="kol">                
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Get in Touch</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href=""><span><i class="fa fa-inbox"></i> info@rccgmobile.org</span></a></li>
+                     <li><a href=""><span><i class="fa fa-phone"></i> +251-378-5182</span></a></li>
+                 </ul>
+             </div>
+             <div class="kol">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Home</span>
+                 </div>
+                <ul class="footer-cat-links" style="margin: 0 0em 0px 0em;">
+                     <li><a href="{{ url_for('history') }}"><span>Our History</span></a></li>
+                     <li><a href="{{ url_for('service') }}"><span>Our Services</span></a></li>
+                     <li><a href="{{ url_for('mission') }}"><span>Our Mission</span></a></li>
+                     <li><a href="{{ url_for('pr') }}"><span>Our Priorities</span></a></li>
+                     <li><a id="values-link" href="{{ url_for('values') }}" style="cursor: pointer; pointer-events: all;">Our Values</a></li>
+                     <li><a href="{{ url_for('pastor') }}"><span>Our Pastor</span></a></li>
+                    
+                </ul>
+             </div>
+             <div class="kol">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Quick Links</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href="{{ url_for('donate') }}"><span>Donate</span></a></li>
+                     <li><a href="{{ url_for('vid') }}"><span>Video Sermon</span></a></li>
+                     <li><a href="{{ url_for('pod') }}"><span>Podcast Sermon</span></a></li>
+                     <li><a href="{{ url_for('activities') }}"><span>Activities</span></a></li>
+                     <li><a href="{{ url_for('gallery') }}"><span>Gallery</span></a></li>
+                     <li><a href="{{ url_for('contact') }}"><span>Contact Us</span></a></li>
+                 </ul>
+             </div>
+             <div class="kol" id="newsletter">
+                 <span> RCCG Jesus House Mobile.</span>
+                 <form id="subscribe">
+                     <input type="email" id="subscriber-email" placeholder="Enter Email Address"/>
+                     <input type="submit" value="Subscribe" id="btn-scribe"/>
+                 </form>
+                 
+                 <div class="social-links social-2">
+                     <a href=""><i class="fa fa-facebook-f"></i></a>
+                     <a href=""><i class="fa fa-twitter"></i></a>
+                     <a href=""><i class="fa fa-youtube"></i></a>
+                     
+                 </div>
+    
+                 <div id="address">
+                     <span>Church Location</span>
+                     <ul>
+                         <li>
+                             <i class="fa fa-building"></i>
+                             
+                                444 Azalea Rd, Ste C, Mobile, AL 36609
+                         </li>
+                         
+                     </ul>
+                 </div>
+                 
+             </div>
+             <div class="social-links social-1 colu">
+                 <a href=""><i class="fa fa-facebook-f"></i></a>
+                 <a href=""><i class="fa fa-twitter"></i></a>
+                 <a href=""><i class="fa fa-youtube"></i></a>
+                 
+             </div>
+        </div>
+        <div id="copyright">
+            &copy; 2024 All Rights Reserved. RCCG Jesus House Mobile.
+        </div>
+     
+    </footer>
+
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#bar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
+
+    <script>
+        function footerToggle(footerBtn) {
+            $(footerBtn).toggleClass("btnActive");
+            $(footerBtn).next().toggleClass("active");
+        }
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true,
+                spaceBetween: 50,
+                speed: 1000,
+                effect: 'fade',
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 50) {
+                    $('.nav').addClass('affix');
+                    console.log("OK");
+                } else {
+                    $('.nav').removeClass('affix');
+                }
+            });
+
+            $(window).on('load ', function () {
+                $('.loader').fadeOut(3000);
+            });
+            
+        
+
+
+            $('.navTrigger').click(function () {
+                $(this).toggleClass('active');
+                console.log("Clicked menu");
+                $("#mainListDiv").toggleClass("show_list");
+                $("#mainListDiv").fadeIn();
+            });
+
+            function checkVisible() {
+                var windowHeight = $(window).height();
+                var scrollPos = $(document).scrollTop();
+
+                $('.equal-height').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+                $('.ns').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+            }
+
+            // Initial check
+            checkVisible();
+
+            // Check when scrolling
+            $(document).scroll(function () {
+                checkVisible();
+            });
+
+        });
+
+    </script>
+        <script>
+            // Back to top
+            var amountScrolled = 200;
+            var amountScrolledNav = 25;
+      
+            $(window).scroll(function() {
+              if ( $(window).scrollTop() > amountScrolled ) {
+                $('button.back-to-top').addClass('show');
+              } else {
+                $('button.back-to-top').removeClass('show');
+              }
+            });
+      
+            $('button.back-to-top').click(function() {
+              $('html, body').animate({
+                scrollTop: 0
+              }, 800);
+              return false;
+            });
+        </script>
+</body>
+</html>

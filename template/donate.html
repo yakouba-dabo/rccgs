@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+   
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="rlogo.png">
+</head>
+<style>
+    #mainNavbar {
+    }
+
+    .navbar-dark .navbar-brand {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar-nav .nav-link {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .display-4 {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .lead {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar.scrolled {
+        background: rgb(34, 31, 31);
+        transition: background 500ms;
+    }
+
+    .font-weight-light {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .pt {
+        color: #222;
+        font-family: montserrat, Sans-serif;
+        
+        line-height: 1.2em;
+    }
+
+    h2 {
+        font-family: fjalla one, sans-serif;
+        font-size: 3.5em;
+        
+        font-style: normal;
+        line-height: 1.23em;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 6.15rem;
+        margin-bottom: 2.1rem;
+    }
+    .equal-height {
+        opacity: 0;
+        transform: translateY(90px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .equal-height.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .ns {
+        opacity: 0;
+        transform: translateX(80px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .ns.fade-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hs-responsive-embed-youtube {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        padding-top: 25px;
+    }
+    .hs-responsive-embed-youtube iframe {
+        position: absolute;
+        width: 100%!important;
+        height: 100%!important;
+    }
+
+ 
+
+
+
+
+.dropbtn {
+  background: transparent;
+  color: white;
+  
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 30%;
+  border-radius: 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {color: rgb(255, 189, 17);}
+
+
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: no-repeat black;
+    
+}
+  
+
+.u-loading {
+	width: 128px;
+	height: 128px;
+	
+	margin: 48px;
+     
+}
+.u-loading__symbol {
+	background-color: transparent;
+	padding: 8px;
+	animation: loading 3s infinite;
+	border-radius: 5px;
+     
+}
+.u-loading__symbol img {
+     
+    left: 0px;
+	display: block;
+	max-width: 100%;
+	animation: loading-icon 3s infinite;
+  
+}
+ @keyframes loading {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 background-color: transparent;
+	}
+	 16% {
+		 background-color: transparent;
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+		 background-color: transparent;
+	}
+	 65% {
+		 background-color: transparent;
+	}
+	 66% {
+		 background-color: transparent;
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(-180deg);
+	}
+}
+ @keyframes loading-icon {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 16% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 65% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 66% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+}
+
+.slide-1 {
+    background: url("pr.jpg");
+    background-size:cover;
+    
+    
+   
+}
+.slider-container {
+    min-height: 100%;
+}
+
+.sc_services_item_text:hover{
+    color: white;
+}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+.donate {
+  /*padding: 50px*/
+  background-color: #171b24;
+  width: 500px;
+  color: #FFF; }
+
+.donate p {
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 300; }
+
+.donate h3 {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 30px; }
+
+.denomination {
+  float: left;
+  width: 33%;
+  text-align: center;
+  padding: 13px 0;
+  cursor: pointer;
+  background-color: #171b24;
+  margin: 0 1px 1px 0;
+  transition: background-color 0.2s ease; }
+
+.denomination label {
+  font-weight: 600;
+  cursor: pointer; }
+
+.denomination input {
+  left: -10001px;
+  position: absolute; }
+
+.denomination-other {
+  width: 99.8%; }
+
+.denomination-other input {
+  position: relative;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 600;
+  width: inherit;
+  text-align: center;
+  background-color: #171b24;
+  border: none;
+  padding: 13px 0;
+  transition: background-color 0.2s ease; }
+
+/* .denomination-other input:hover {
+    } */
+
+.denomination-other input:before {
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  content: '$'; }
+
+.donate-amount .selected, .denomination-other input.selected, .donate-amount .denomination:hover {
+  background-color: #fff;
+  border: 0; }
+
+.donate-black h2 {
+  font-family: 'Oswald', sans-serif;
+  color: #FFF;
+  font-size: 32px;
+  margin-bottom: 30px; }
+
+.donate-black h2 span {
+  display: block;
+  float: left;
+  font-size: 16px;
+  padding-top: 7px;
+  margin-right: 20px;
+  text-align: center;
+  width: 30px;
+  height: 25px;
+  background-color: #ec3029;
+  border-radius: 50%; }
+
+.donate-type label,
+.donate-payment label {
+  font-size: 14px;
+  font-weight: 300;
+  margin-right: 30px; }
+
+.donate-blue {
+  background-color: #1e252d;
+  padding: 25px; }
+
+.donate-black {
+  padding: 25px; }
+
+.donate-submit button {
+  font-family: 'Oswald', sans-serif;
+  width: 100%;
+  background-color: #2596be;
+  border: none;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 14px 0;
+  margin: 30px 0;
+  text-transform: uppercase;
+  cursor: pointer; }
+
+.donate-submit small {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px; }
+
+\::-webkit-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 300; }
+
+\:-moz-placeholder {
+  color: #FFF;
+  font-weight: 300; }
+
+\::-moz-placeholder {
+  color: #FFF;
+  font-weight: 300; }
+
+\:-ms-input-placeholder {
+  font-weight: 300;
+  color: #FFF; }
+
+*:focus {
+  outline: none; }
+
+
+
+/* Modal container */
+.modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+/* Modal content */
+.modal-content {
+  
+  margin: 10% auto; /* Center modal vertically and horizontally */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Width of modal content */
+}
+
+/* Close button */
+.close {
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #2596be; /* Change color on hover/focus */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.slider-title {
+            
+            margin-top: 70%;
+        }
+    @media only screen and (min-width : 1024px) {
+     
+        .slider-title {
+            font-size: 70px;
+            margin-top: 15%;
+        }
+        .dropdown-content {
+            width: 200px;
+        }
+    }
+
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .modal-content {
+      background-color: #171b24;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      border-radius: 5px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation-name: modalopen;
+      animation-duration: 0.4s;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .donate h2, .donate-submit button {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .donate-amount-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .donate-amount-box input {
+      width: calc(100% - 10px);
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 16px;
+      
+      
+    }
+    .anonymous, .agree {
+      margin-bottom: 10px;
+    }
+    .terms {
+      margin-bottom: 10px;
+    }
+    /* Responsive styles */
+    @media screen and (max-width: 600px) {
+      .donate-amount-box input {
+        width: 100%;
+      }
+    }
+    /* Animation */
+    @keyframes modalopen {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+</style>
+<body>
+    <nav id="bar" class=" fixed-top">
+        <nav class="nav">
+            <div class="" style="min-width: 100%;">
+                <div class="logo">
+                    <a href="#"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "  width="100" height="5"></a>
+                </div>
+                
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks" >
+                        <li><a href="{{ url_for('index') }}" style="font-size: 18px;">Home</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Who are we</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('history') }}"  style="color: black; font-size: 52%">Our History</a>
+                                  <a href="{{ url_for('service') }}"  style="color: black; font-size: 52%">Our Services</a>
+                                  <a href="{{ url_for('mission') }}"  style="color: black; font-size: 52%">Our Mission</a>
+                                  <a href="{{ url_for('values') }} "  style="color: black; font-size: 52%">Our Values</a>
+                                  <a href="{{ url_for('pr') }}"    style="color: black; font-size: 52%">Our Priorities</a>
+                                  <a href="{{ url_for('pastor') }}"  style="color: black; font-size: 52%">Our Pastor</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Sermon</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('vid') }}" target="tab" style="color: black; font-size: 52%">Video Sermon</a>
+                                  <a href="{{ url_for('pod') }}" target="tab" style="color: black; font-size: 52%">Podcast Sermon</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Connect</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('prreq') }}" target="tab" style="color: black; font-size: 52%">Prayer request</a>
+                                  <a href="{{ url_for('ytlive') }}" target="tab" style="color: black; font-size: 52%">Live streaming</a>
+                                  <a href=" {{ url_for('activities') }}" target="tab" style="color: black; font-size: 52%">Activities</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="{{ url_for('contact') }}" target="tab" style="font-size: 18px;">Contact</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="" style="float: right;">
+                   
+                    <button><a href="{{ url_for('donate') }}" style="color: black; text-decoration: none;">Donate</a></button>
+                    
+                </div>
+
+                <span class="navTrigger" style="margin-top: 6%; margin-right: 23%;">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>
+    </nav>
+
+    <section>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper" style="background-size: cover;">
+                <!-- Slides -->
+                <div class="swiper-slide slide-1">
+                    <div class="container">
+                        <div class="slider-container">
+                            <div class="animated-area">
+                                <p class="slider-title cssanimation sequence leFadeInLeft pt" style="color: white;">Donation</p>
+                            </div>
+                           
+                            <div id="space">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ... Other slides go here ... -->
+            </div>
+            <!-- If we need navigation buttons -->
+            
+        </div>
+    </section>
+
+    <div style="padding: 10px;">
+        <h2 style="text-align: center; font-style: italic;">Make a Donation </h2>
+    </div>
+
+    <section id="intro" class=" bg-gray ns">
+        <div id="development-img" style="padding: 15px;">
+            <img src="src=“{{url_for(‘static’, filename=‘tithe.png’)}}” "  title="Mobile App Development"/>
+        </div>
+        <div id="intro-info">
+            <div>
+                <div>
+                    <h2 class="pt">Tithe</h2>
+                    <p style="font-size: 16px; padding: 15px;">
+                        Abraham tithed before the Law.  Moses penned it in the Law.  Jesus commended it in the New Testament. 
+                         Yes, you should Tithe.  The Tithe is the 10% of your increase.  The Tithe belongs to God.  Truthfully, 
+                         everything we are and have belongs to God.  He allows us to keep most of our increase, but the tithe is not ours.  
+                         We get the privilege of returning the Tithe to God in our local church’s offerings.  Did you Tithe last week?
+                    </p>
+                    
+                    <div id="bb" >
+                    
+                        <input type="button" id="openModalBtn" class="brand-btn" value="Tithe Now">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        
+    </section>
+
+    <div id="myModal" class="modal" style="display: none; justify-content: center;">
+        <div class="donate modal-content">
+            <!-- Modal content -->
+            <span class="close">&times;</span>
+            <div class="donate-black">
+                <h2><span>$</span> Donate</h2>
+                <p>Your contribution is vital to the success of our initiative.<br>Choose the amount you wish to donate with PayPal, as a one-time or monthly payment.</p>
+            </div>
+            <div class="donate-blue">
+                <h3>Donation amount*</h3>
+                <div class="donate-amount-box">
+                    
+                    <div class="denomination-other">
+                        <input id="don" autocomplete="off" type="text" name="amount" value="" placeholder="Enter amount">
+                    </div>
+                    <input style="background-color: #ddd;" type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    <input style="background-color: #ddd;" type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    <input style="background-color: #ddd;" type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number">
+                    <input style="background-color: #ddd;" type="email" id="email" name="email" placeholder="Email Address">
+                    <div class="anonymous">
+                      <input style="background-color: #ddd;" type="checkbox" id="anonymous" name="anonymous">
+                      <label for="anonymous">Make this an anonymous donation</label>
+                    </div>
+                    <div class="agree">
+                      <input style="background-color: #ddd;" type="checkbox" id="agree" name="agree">
+                      <label for="agree">Agree to Terms</label>
+                    </div>
+                </div>
+                <div class="terms">
+                    <p>By agreeing to the terms your submitted data is being collected and stored. Stored data will not be shared with any third party.</p>
+                </div>
+            </div>
+
+            <div class="donate-blue donate-payment">
+                <h3>Payment Method</h3>
+                <div>
+                    <label>
+                      <input type="radio" name="payment" value="paypal" checked="checked" autocomplete="off">PayPal
+                    </label>
+                    <label>
+                      <input type="radio" name="payment" value="crypto" autocomplete="off">Debit or Credit Card
+                    </label>
+                </div>
+                <div class="donate-submit">
+                    <form>
+                    <button type="submit" autocomplete="off" id="bbtn">Donate</button>
+                    </form>
+                    <p><small>Please note that contributions are not tax-deductible.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="intro" class="">
+        <div id="intro-info">
+            <div>
+                <div>
+                    <h2 class="pt">Offering</h2>
+                    <p style="font-size: 20px;">
+                        An offering is a freewill gift.  God doesn’t set the amount, but He does command that you give something.  World missions, building programs, 
+                        church initiatives, etc. are all examples of offerings.  Did you give a freewill offering over and above your tithe last week?        
+                    </p>
+                </div>
+                <div id="intro-tag-btt" >
+                    
+                    <button id="openModalBtn" class="brand-btn">Give</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="development-img">
+            <img src="src=“{{url_for(‘static’, filename=‘offering.jpg’)}}” ">
+        </div>
+    </section>
+
+
+    <section id="intro" class="bg-gray ns">
+        <div id="development-img" style="padding: 20px;">
+            <img src="src=“{{url_for(‘static’, filename=‘church1.jpg’)}}” " title="Mobile App Development"/>
+        </div>
+        <div id="intro-info">
+            <div>
+                <div>
+                    <h2 class="pt">Contribute to the expansion of the Church</h2>
+                    <p style="font-size: large; padding: 15px;">
+                        We have many new members in our community, so planing to move the church to a permanent sit, 
+                        it is a great idea. We strive to provide comfort!
+                    </p>
+                    
+                    <div id="bb" >
+                    
+                        <button id="openModalBtn" class="brand-btn">Give</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    
+        
+        </section>
+   
+        <!-- Button to open the modal -->
+    
+
+
+    
+
+        <button class="back-to-top" type="button"></button>
+
+
+        <footer style="font-size: 16px;">
+            <div>
+                 <span class="logo"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "></span>
+            </div>
+        
+            <div class="row">
+                 <div class="kol">                
+                     <div class="link-cat" onclick="footerToggle(this)">
+                         <span class="footer-toggle"></span>
+                         <span class="footer-cat">Get in Touch</span>
+                     </div>
+                     <ul class="footer-cat-links">
+                         <li><a href=""><span><i class="fa fa-inbox"></i> info@rccgmobile.org</span></a></li>
+                         <li><a href=""><span><i class="fa fa-phone"></i> +251-378-5182</span></a></li>
+                     </ul>
+                 </div>
+                 <div class="kol">
+                     <div class="link-cat" onclick="footerToggle(this)">
+                         <span class="footer-toggle"></span>
+                         <span class="footer-cat">Home</span>
+                     </div>
+                    <ul class="footer-cat-links" style="margin: 0 0em 0px 0em;">
+                         <li><a href="{{ url_for('history') }}"><span>Our History</span></a></li>
+                         <li><a href="{{ url_for('service') }}"><span>Our Services</span></a></li>
+                         <li><a href="{{ url_for('mission') }}"><span>Our Mission</span></a></li>
+                         <li><a href="{{ url_for('pr') }}"><span>Our Priorities</span></a></li>
+                         <li><a id="values-link" href="{{ url_for('values') }}" style="cursor: pointer; pointer-events: all;">Our Values</a></li>
+                         <li><a href="{{ url_for('pastor') }}"><span>Our Pastor</span></a></li>
+                        
+                    </ul>
+                 </div>
+                 <div class="kol">
+                     <div class="link-cat" onclick="footerToggle(this)">
+                         <span class="footer-toggle"></span>
+                         <span class="footer-cat">Quick Links</span>
+                     </div>
+                     <ul class="footer-cat-links">
+                         <li><a href="{{ url_for('donate') }}"><span>Donate</span></a></li>
+                         <li><a href="{{ url_for('vid') }}"><span>Video Sermon</span></a></li>
+                         <li><a href="{{ url_for('pod') }}"><span>Podcast Sermon</span></a></li>
+                         <li><a href="{{ url_for('activities') }}"><span>Activities</span></a></li>
+                         <li><a href="{{ url_for('gallery') }}"><span>Gallery</span></a></li>
+                         <li><a href="{{ url_for('contact') }}"><span>Contact Us</span></a></li>
+                     </ul>
+                 </div>
+                 <div class="kol" id="newsletter">
+                     <span> RCCG Jesus House Mobile.</span>
+                     <form id="subscribe">
+                         <input type="email" id="subscriber-email" placeholder="Enter Email Address"/>
+                         <input type="submit" value="Subscribe" id="btn-scribe"/>
+                     </form>
+                     
+                     <div class="social-links social-2">
+                         <a href=""><i class="fa fa-facebook-f"></i></a>
+                         <a href=""><i class="fa fa-twitter"></i></a>
+                         <a href=""><i class="fa fa-youtube"></i></a>
+                         
+                     </div>
+        
+                     <div id="address">
+                         <span>Church Location</span>
+                         <ul>
+                             <li>
+                                 <i class="fa fa-building"></i>
+                                 
+                                    444 Azalea Rd, Ste C, Mobile, AL 36609
+                             </li>
+                             
+                         </ul>
+                     </div>
+                     
+                 </div>
+                 <div class="social-links social-1 colu">
+                     <a href=""><i class="fa fa-facebook-f"></i></a>
+                     <a href=""><i class="fa fa-twitter"></i></a>
+                     <a href=""><i class="fa fa-youtube"></i></a>
+                     
+                 </div>
+            </div>
+            <div id="copyright">
+                &copy; 2024 All Rights Reserved. RCCG Jesus House Mobile.
+            </div>
+         
+        </footer>
+
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#bar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
+
+    <script>
+        function footerToggle(footerBtn) {
+            $(footerBtn).toggleClass("btnActive");
+            $(footerBtn).next().toggleClass("active");
+        }
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true,
+                spaceBetween: 50,
+                speed: 1000,
+                effect: 'fade',
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 50) {
+                    $('.nav').addClass('affix');
+                    console.log("OK");
+                } else {
+                    $('.nav').removeClass('affix');
+                }
+            });
+
+            $(window).on('load ', function () {
+                $('.loader').fadeOut(3000);
+            });
+            
+            $(".denomination").click(function(event) {
+                $(".denomination").removeClass("selected").prop('checked', false);
+                $(".denomination-other input").removeClass("selected").val('');
+                $(this).addClass("selected");
+                $(this).children(":first").prop('checked', true);
+                $("#bbtn").text('Donate $' + $(this).children(":first").val())
+                });
+
+                $(".denomination-other input").on('keypress', function (event) {
+                // allow only int values
+                // TODO: remove leading 0
+                var regex = new RegExp("^[0-9]+$");
+                var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                if (!regex.test(key)) {
+                    event.preventDefault();
+                    return false;
+                }
+                
+                $(".denomination").removeClass("selected").prop('checked', false);
+                $(this).addClass("selected");
+                $("#bbtn").text('Donate $' + $(this).val() + key );
+                
+            });
+
+
+
+        
+
+
+            $('.navTrigger').click(function () {
+                $(this).toggleClass('active');
+                console.log("Clicked menu");
+                $("#mainListDiv").toggleClass("show_list");
+                $("#mainListDiv").fadeIn();
+            });
+
+            function checkVisible() {
+                var windowHeight = $(window).height();
+                var scrollPos = $(document).scrollTop();
+
+                $('.equal-height').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+                $('.ns').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+            }
+
+            // Initial check
+            checkVisible();
+
+            // Check when scrolling
+            $(document).scroll(function () {
+                checkVisible();
+            });
+
+        });
+
+
+
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("myModal");
+        var span = document.querySelector("#myModal .close");
+        var buttons = document.querySelectorAll("#openModalBtn");
+        var submitBtn = document.querySelector("#myModal #bbtn");
+
+
+        // Function to open the modal
+        function openModal() {
+            modal.style.display = "flex";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Event listener for closing the modal
+        span.addEventListener("click", closeModal);
+
+        // Event listener for clicking outside the modal
+        window.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Add event listener to all buttons with id "openModalBtn"
+        buttons.forEach(function(button) {
+            button.addEventListener("click", openModal);
+        });
+
+
+        submitBtn.addEventListener("click", function(event) {
+            event.preventDefault();
+            var don = document.getElementById("don").value;
+            // Validate form fields
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var email = document.getElementById("email").value;
+            var anonymous = document.getElementById("anonymous").checked;
+            var agree = document.getElementById("agree").checked;
+
+            if (firstName === "" || lastName === "") {
+                alert("First Name and Last Name are required.");
+                return;
+            }
+            if(!agree) {
+                alert("Please agree to the Terms.");
+                return;
+            }
+
+            // Process the donation submission
+            // You can send this data to your server or handle it accordingly
+            console.log("First Name:", firstName);
+            console.log("Last Name:", lastName);
+            console.log("Phone Number:", phoneNumber);
+            console.log("Email:", email);
+            console.log("Anonymous:", anonymous);
+            console.log("Agree to Terms:", agree);
+            window.location.href = `https://www.paypal.com/donate/?business=Rccgjhm%40gmail.com&first_name=Testing&last_name=&email=&address1=&address2=&city=&state=&zip=&country=&invoice=3caa1778c2ae7c4744967a0257628153&amount=${don}&item_name=Tithe&currency_code=USD&return=https%3A%2F%2Frccgmobile.org%3Fgive-listener%3Dgive-gateway%26give-gateway-id%3Dpaypal%26give-gateway-method%3DhandleSuccessPaymentReturn%26donation-id%3D2866%26give-route-signature%3Dedecfc35b7c172e63c039820c5f9621f%26give-route-signature-id%3D2866%26give-route-signature-expiration%3D1711556138&cancel_return=https%3A%2F%2Frccgmobile.org%3Fgive-listener%3Dgive-gateway%26give-gateway-id%3Dpaypal%26give-gateway-method%3DhandleFailedPaymentReturn%26donation-id%3D2866%26give-route-signature%3Da7f514637b902c3041b1c9bc849add9e%26give-route-signature-id%3D2866%26give-route-signature-expiration%3D1711556138&notify_url=https%3A%2F%2Frccgmobile.org%3Fgive-listener%3Dgive-gateway%26give-gateway-id%3Dpaypal%26give-gateway-method%3DhandleIpnNotification&no_shipping=1&shipping=0&no_note=1&charset=UTF-8&custom=2866&rm=2&page_style=PayPal&cbt=RCCG+Jesus+House+Mobile&bn=givewp_SP&cmd=_donations`
+            // Close the modal after submission
+            closeModal();
+        });
+
+        
+
+
+    });
+
+
+</script>
+<script>
+    // Back to top
+    var amountScrolled = 200;
+    var amountScrolledNav = 25;
+
+    $(window).scroll(function() {
+      if ( $(window).scrollTop() > amountScrolled ) {
+        $('button.back-to-top').addClass('show');
+      } else {
+        $('button.back-to-top').removeClass('show');
+      }
+    });
+
+    $('button.back-to-top').click(function() {
+      $('html, body').animate({
+        scrollTop: 0
+      }, 800);
+      return false;
+    });
+</script>    
+
+</body>
+</html>
+

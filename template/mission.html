@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./rlogo.png">
+</head>
+<style>
+    #mainNavbar {
+    }
+    #our{
+      font-size: 30px;
+      font-family: 'fjalla one 'sans-serif;
+      font-weight: bolder;
+      outline: 0;
+
+    }
+    .navbar-dark .navbar-brand {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar-nav .nav-link {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .display-4 {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .lead {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar.scrolled {
+        background: rgb(34, 31, 31);
+        transition: background 500ms;
+    }
+
+    .font-weight-light {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .pt {
+        color: #222;
+        font-family: montserrat, Sans-serif;
+        
+        line-height: 1.2em;
+    }
+
+    h2 {
+        font-family: fjalla one, sans-serif;
+        font-size: 3.5em;
+        
+        font-style: normal;
+        line-height: 1.23em;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 6.15rem;
+        margin-bottom: 2.1rem;
+    }
+    .equal-height {
+        opacity: 0;
+        transform: translateY(90px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .equal-height.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .ns {
+        opacity: 0;
+        transform: translateX(80px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .ns.fade-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hs-responsive-embed-youtube {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        padding-top: 25px;
+    }
+    .hs-responsive-embed-youtube iframe {
+        position: absolute;
+        width: 100%!important;
+        height: 100%!important;
+    }
+
+    .payment-box{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-color: #1B998B;
+  border-radius: 2.5rem;
+  box-shadow: 0.25rem 0.25rem 1rem 0.5rem #1D1A30;
+  
+  
+  /*Size settings*/
+  min-height: 20rem;
+  max-width: 20rem;
+  
+  /*Content align*/
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.payment-title{  
+  font-weight:bold;
+  font-size: 2rem;
+  color: #C5D86D;
+}
+
+.lock-handle-outer{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-bottom: none;
+  border-color: #1B998B;
+  border-radius: 1rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.2rem #1D1A30;
+  
+  /*Size settings*/
+  min-height: 10rem;
+  max-width: 15rem;
+  
+  /*Content align*/
+  justify-content: center;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.lock-handle-inner{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-bottom: none;
+  border-color: #1B998B;
+  border-radius: 1rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.2rem #1D1A30;
+  
+  /*Size settings*/
+  min-height: 10rem;
+  max-width: 8rem;
+  
+  /*Content align*/
+  justify-content: bottom;
+  margin: auto;
+  vertical-align:bottom;
+}
+
+/*Buttons*/
+.donate-btn{  
+  /*Size settings*/
+  min-width:15rem;
+  min-height:3rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #1B998B;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem #1D1A30;
+  
+  /*Text settings*/
+  font-weight:bold;
+  font-size: 1rem;
+  color: #C5D86D;
+  cursor:pointer;
+  
+}
+
+.donate-btn:hover{
+  background-color: #C5D86D;
+  color:#F46036;
+  transition: 0.1s;
+  box-shadow: 0.1rem 0.1rem 1rem 0.5rem #1D1A30;
+}
+.donate-btn:active{
+  background-color: #1D1A30;
+  color:#F46036;
+  transition: 0.1s;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem #1D1A30;
+}
+
+/*Key hole items*/
+
+.key-hole{
+  /*Circle*/
+  border: 0.35rem solid;;
+  border-color: #1B998B;
+  border-bottom: 0rem;
+  width: 3rem;
+  min-height:3rem;
+  border-radius: 2rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem 1rem #1D1A30;
+  
+  
+  /*Content align*/
+  margin: auto;
+  vertical-align:middle;
+}
+
+.key-box{
+  /*Triangle*/
+  border: 0.35rem solid;;
+  border-color: #1B998B;
+  border-top: 0rem;
+  width: 2rem;
+  min-height:3rem;
+  border-radius: 1rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem 0.5rem #1D1A30;
+  
+  
+  /*Content align*/
+  margin: auto;
+  vertical-align:middle;
+}
+
+
+.keyarea{
+  padding: 1rem;
+}
+
+
+
+
+
+
+.dropbtn {
+  background: transparent;
+  color: white;
+  
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 30%;
+  border-radius: 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {color: rgb(255, 189, 17);}
+
+
+.donate {
+  background: #005068;
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%), -webkit-linear-gradient(left, #1595bf 0%, #0e7d91 50%, #147995 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%), linear-gradient(to right, #1c7a8f 0%, #2f6b83 50%, #1e84ad 100%);
+  background-position: 0 0;
+  background-size: 200% 100%;
+  border-radius: 4px;
+  color: #fff;
+  padding: 15px 65px 15px 15px;
+  text-shadow: 1px 1px 5px #666;
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
+}
+.donate:after {
+  border-left: 1px solid #1c99b9;
+  color: #003527;
+  content: "\f004";
+  font: 20px "FontAwesome";
+  padding: 10px 0;
+  padding-left: 15px;
+  position: absolute;
+  right: 16px;
+  top: 7px;
+  -webkit-transition: all 600ms 200ms;
+  transition: all 600ms 200ms;
+}
+.donate:hover {
+  background-position: -100% 0;
+  color: white;
+}
+.donate:hover:after {
+  border-left: 1px solid #007382;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: no-repeat black;
+    
+}
+  
+
+.u-loading {
+	width: 128px;
+	height: 128px;
+	
+	margin: 48px;
+     
+}
+.u-loading__symbol {
+	background-color: transparent;
+	padding: 8px;
+	animation: loading 3s infinite;
+	border-radius: 5px;
+     
+}
+.u-loading__symbol img {
+     
+    left: 0px;
+	display: block;
+	max-width: 100%;
+	animation: loading-icon 3s infinite;
+  
+}
+ @keyframes loading {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 background-color: transparent;
+	}
+	 16% {
+		 background-color: transparent;
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+		 background-color: transparent;
+	}
+	 65% {
+		 background-color: transparent;
+	}
+	 66% {
+		 background-color: transparent;
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(-180deg);
+	}
+}
+ @keyframes loading-icon {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 16% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 65% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 66% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+}
+
+.slide-1 {
+    background: url("sl.jpg");
+    background-size:cover;
+    
+    
+   
+}
+.slider-container {
+    min-height: 100%;
+}
+
+.sc_services_item_text:hover{
+    color: white;
+}
+.elementor-2093 .elementor-element.elementor-element-8ca218e:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-8ca218e > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #ffffff;
+                background-image: url("http://rccgmobile.org/wp-content/uploads/2018/10/home3_bg-nocopyright.png");
+                background-position: top center;
+                background-repeat: repeat;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-8ca218e {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-8ca218e > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-d51020d:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-d51020d > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: rgba(26,20,17,0.5);
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-d51020d {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+                margin-top: -147px;
+                margin-bottom: 0px;
+                z-index: 1;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-d51020d > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-516cc97.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-516cc97.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-0579d9a .elementor-spacer-inner {
+                height: 25px;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-c76122b.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-c76122b.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-f3dd0fd .elementor-spacer-inner {
+                height: 25px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-bd68a79:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-bd68a79 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #1a1411;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-bd68a79 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-bd68a79 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-def80bd.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-def80bd.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-9b130f0 .elementor-spacer-inner {
+                height: 10px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-ec7c650 .elementor-spacer-inner {
+                height: 10px;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-f925284.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-f925284.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-327a473 .elementor-spacer-inner {
+                height: 15px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-41b4646 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-af2a72c.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-af2a72c.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-af2a72c > .elementor-element-populated > .elementor-widget-wrap {
+                padding: 0% 14% 0% 0%;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-f92b479 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-08d18b1 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-9dc02b9:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-9dc02b9 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: rgba(247,243,238,0.9);
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-9dc02b9 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-9dc02b9 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-811c621 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-604bd57 > .elementor-widget-container {
+                box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-823114d .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-62d3795 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-3da50fe:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-3da50fe > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-image: url("http://rccgmobile.org/wp-content/uploads/2018/06/bg_location-copyright.jpg");
+                background-position: top center;
+                background-repeat: no-repeat;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-3da50fe {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-3da50fe > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-421a643 .elementor-spacer-inner {
+                height: 260px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-5993a8f .elementor-spacer-inner {
+                height: 6px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-a35193f .elementor-heading-title {
+                color: #ffffff;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-a35193f > .elementor-widget-container {
+                padding: 0% 10% 0% 0%;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-26968aa .elementor-spacer-inner {
+                height: 36px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-0a92ea2 .elementor-spacer-inner {
+                height: 285px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-22fbdc8 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-d7b5967 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-3599c97 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-4825f7a .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-e15758c:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-e15758c > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: rgba(247,243,238,0.9);
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-e15758c {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-e15758c > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-e941bea .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-b775630 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-86a9be2 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-56bc769 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-a32dafa:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-a32dafa > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-image: url("http://rccgmobile.org/wp-content/uploads/2018/06/bg_video-copyright.jpg");
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-a32dafa {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-a32dafa > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-dcbccb4 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-5ae0d30 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-d1cf840.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-d1cf840.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-5560628 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-7e99ea1 > .elementor-widget-container {
+                padding: 0% 14% 0% 0%;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-5b56cfa .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-c906372 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-84253b9:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-84253b9 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #f26837;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-84253b9 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-84253b9 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-5f385ca .elementor-spacer-inner {
+                height: 110px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-52cb606 .elementor-spacer-inner {
+                height: 110px;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-e873c7c.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-e873c7c.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-kit-2093 {
+                --e-global-color-primary: #6EC1E4;
+                --e-global-color-secondary: #54595F;
+                --e-global-color-text: #7A7A7A;
+                --e-global-color-accent: #61CE70;
+                --e-global-color-4a56ff6: #4054B2;
+                --e-global-color-16a0d30: #23A455;
+                --e-global-color-492d61cc: #000;
+                --e-global-color-496f740c: #FFF;
+                --e-global-typography-primary-font-family: "Roboto";
+                --e-global-typography-primary-font-weight: 600;
+                --e-global-typography-secondary-font-family: "Roboto Slab";
+                --e-global-typography-secondary-font-weight: 400;
+                --e-global-typography-text-font-family: "Roboto";
+                --e-global-typography-text-font-weight: 400;
+                --e-global-typography-accent-font-family: "Roboto";
+                --e-global-typography-accent-font-weight: 500;
+            }
+
+            .elementor-section.elementor-section-boxed > .elementor-container {
+                max-width: 1140px;
+            }
+
+            .elementor-widget:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+    
+
+            h1.entry-title {
+                display: var(--page-title-display);
+            }
+
+            @media(min-width: 767px) {
+                .elementor-2093 .elementor-element.elementor-element-516cc97 {
+                    width:35%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-c76122b {
+                    width: 65%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-def80bd {
+                    width: 35%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-f925284 {
+                    width: 65%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-1636531 {
+                    width: 20%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e4f9261 {
+                    width: 80%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-3ceca36 {
+                    width: 75%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e873c7c {
+                    width: 25%;
+                }
+            }
+
+            @media(max-width: 1024px) and (min-width:767px) {
+                .elementor-2093 .elementor-element.elementor-element-1636531 {
+                    width:20%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e4f9261 {
+                    width: 45%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-3ceca36 {
+                    width: 100%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e873c7c {
+                    width: 100%;
+                }
+            }
+
+            @media(max-width: 1024px) {
+                .elementor-2093 .elementor-element.elementor-element-41b4646 .elementor-spacer-inner {
+                    height:80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-08d18b1 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-811c621 .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-823114d .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-62d3795 .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-421a643 .elementor-spacer-inner {
+                    height: 120px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-0a92ea2 .elementor-spacer-inner {
+                    height: 120px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-22fbdc8 .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-d7b5967 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-3599c97 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-4825f7a .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e941bea .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-b775630 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-86a9be2 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-56bc769 .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-dcbccb4 .elementor-spacer-inner {
+                    height: 100px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5ae0d30 .elementor-spacer-inner {
+                    height: 100px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5560628 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5b56cfa .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5f385ca .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-52cb606 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-1a36063 .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-section.elementor-section-boxed > .elementor-container {
+                    max-width: 1024px;
+                }
+            }
+
+            @media(max-width: 766px) {
+                .elementor-2093 .elementor-element.elementor-element-4140339 > .elementor-widget-container {
+                    margin:-40px 0px 0px 0px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-41b4646 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-f92b479 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-08d18b1 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-811c621 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-823114d .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-62d3795 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-3da50fe:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-3da50fe > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                    background-position: 61% -114px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-421a643 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-1636531 {
+                    width: 40%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e4f9261 {
+                    width: 50%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-0a92ea2 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-22fbdc8 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-3599c97 .elementor-spacer-inner {
+                    height: 20px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-4825f7a .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e941bea .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-86a9be2 .elementor-spacer-inner {
+                    height: 20px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-56bc769 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-dcbccb4 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5ae0d30 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-c906372 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5f385ca .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-1a36063 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-section.elementor-section-boxed > .elementor-container {
+                    max-width: 767px;
+                }
+            }
+
+            .elementor-357 .elementor-element.elementor-element-017b886:not(.elementor-motion-effects-element-type-background), .elementor-357 .elementor-element.elementor-element-017b886 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #ffffff;
+                background-image: url("http://rccgmobile.org/wp-content/uploads/2018/11/about1_bg1-nocopyright.png");
+                background-position: top center;
+                background-repeat: no-repeat;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-017b886 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-017b886 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-9beffd9 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-9beffd9 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-95a8074 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute) {
+                margin-bottom: 0px;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-c69bdb9 .elementor-spacer-inner {
+                height: 80px;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-a3b3bb0 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-f460e4c .elementor-spacer-inner {
+                height: 171px;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-79a7c4e:not(.elementor-motion-effects-element-type-background), .elementor-357 .elementor-element.elementor-element-79a7c4e > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #f26837;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-79a7c4e {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-79a7c4e > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-803dcfb .elementor-spacer-inner {
+                height: 100px;
+            }
+
+            .elementor-357 .elementor-element.elementor-element-cfc9256 .elementor-spacer-inner {
+                height: 100px;
+            }
+
+            @media(min-width: 767px) {
+                .elementor-357 .elementor-element.elementor-element-95a8074 {
+                    width:52.188%;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-7c28eee {
+                    width: 47.735%;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-e934ce5 {
+                    width: 10%;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-0fc4815 {
+                    width: 80%;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-08c8e06 {
+                    width: 8.665%;
+                }
+            }
+
+            @media(max-width: 1024px) {
+                .elementor-357 .elementor-element.elementor-element-c69bdb9 .elementor-spacer-inner {
+                    height:80px;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-a3b3bb0 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-f460e4c .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-803dcfb .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-cfc9256 .elementor-spacer-inner {
+                    height: 80px;
+                }
+            }
+
+            @media(max-width: 766px) {
+                .elementor-357 .elementor-element.elementor-element-c69bdb9 .elementor-spacer-inner {
+                    height:60px;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-a3b3bb0 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-f460e4c .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-803dcfb .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-357 .elementor-element.elementor-element-cfc9256 .elementor-spacer-inner {
+                    height: 60px;
+                }
+            }
+
+            .slider-title {
+            
+            margin-top: 70%;
+        }
+    @media only screen and (min-width : 1024px) {
+     
+        .slider-title {
+            font-size: 70px;
+            margin-top: 15%;
+        }
+        .dropdown-content {
+            width: 200px;
+        }
+    }
+    a.values-link:hover{
+        cursor: pointer;
+    }
+
+    
+    .affix {
+    padding: 10px;
+   
+    background-color: #F46036;
+    min-height: 10%;
+   
+}
+</style>
+<body>
+    <nav id="bar" class=" fixed-top">
+        <nav class="nav">
+            <div class="" style="min-width: 100%;">
+                <div class="logo">
+                    <a href="#"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "  width="100" height="5"></a>
+                </div>
+                
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks" >
+                        <li><a href="{{ url_for('index') }}" style="font-size: 18px;">Home</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Who are we</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('history') }}"  style="color: black; font-size: 52%">Our History</a>
+                                  <a href="{{ url_for('service') }}"  style="color: black; font-size: 52%">Our Services</a>
+                                  <a href="{{ url_for('mission') }}"  style="color: black; font-size: 52%">Our Mission</a>
+                                  <a href="{{ url_for('values') }} "  style="color: black; font-size: 52%">Our Values</a>
+                                  <a href="{{ url_for('pr') }}"    style="color: black; font-size: 52%">Our Priorities</a>
+                                  <a href="{{ url_for('pastor') }}"  style="color: black; font-size: 52%">Our Pastor</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Sermon</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('vid') }}" target="tab" style="color: black; font-size: 52%">Video Sermon</a>
+                                  <a href="{{ url_for('pod') }}" target="tab" style="color: black; font-size: 52%">Podcast Sermon</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Connect</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('prreq') }}" target="tab" style="color: black; font-size: 52%">Prayer request</a>
+                                  <a href="{{ url_for('ytlive') }}" target="tab" style="color: black; font-size: 52%">Live streaming</a>
+                                  <a href=" {{ url_for('activities') }}" target="tab" style="color: black; font-size: 52%">Activities</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="{{ url_for('contact') }}" target="tab" style="font-size: 18px;">Contact</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="" style="float: right;">
+                   
+                    <button><a href="{{ url_for('donate') }}" style="color: black; text-decoration: none;">Donate</a></button>
+                    
+                </div>
+
+                <span class="navTrigger" style="margin-top: 6%; margin-right: 23%;">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>
+    </nav>
+    
+    <section>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper" style="background-size: cover;">
+                <!-- Slides -->
+                <div class="swiper-slide slide-1">
+                    <div class="container">
+                        <div class="slider-container">
+                            <div class="animated-area">
+                                <p class="slider-title cssanimation sequence leFadeInLeft pt" style="color: white;">Our Mission</p>
+                            </div>
+                           
+                            <div id="space">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ... Other slides go here ... -->
+            </div>
+            <!-- If we need navigation buttons -->
+            
+        </div>
+    </section>
+
+    <button class="back-to-top" type="button"></button>
+<div class="content_wrap">
+
+<div class="content">
+
+<article id="post-357" class="post_item_single post_type_page post-357 page type-page status-publish hentry">
+
+
+<div class="post_content entry-content">
+<div data-elementor-type="wp-post" data-elementor-id="357" class="elementor elementor-357" data-elementor-settings="[]">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-017b886 elementor-section-stretched hide_bg_image_on_tablet hide_bg_image_on_mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="017b886" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c749720 sc_layouts_column_icons_position_left" data-id="c749720" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-9beffd9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9beffd9" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-extended">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-95a8074 sc_layouts_column_icons_position_left" data-id="95a8074" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-c69bdb9 elementor-widget elementor-widget-spacer" data-id="c69bdb9" data-element_type="widget" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-bb97db1 elementor-widget elementor-widget-trx_sc_title" data-id="bb97db1" data-element_type="widget" data-widget_type="trx_sc_title.default">
+<div class="elementor-widget-container">
+<div id="trx_sc_title_1003639370" class="sc_title sc_title_accent"><span class="sc_item_subtitle sc_title_subtitle sc_align_center sc_item_subtitle_above sc_item_title_style_accent">Welcome!</span><h2 class="sc_item_title sc_title_title sc_align_center sc_item_title_style_accent"><span class="sc_item_title_text" id="our">OUR MISSION</span></h2></div><!-- /.sc_title -->		</div>
+</div>
+<div class="elementor-element elementor-element-26e85db elementor-widget elementor-widget-image" data-id="26e85db" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+    <div class="elementor-image">
+                    <img width="653" height="365" src="https://rccgmobile.org/wp-content/uploads/2020/08/Pastor-E.A-Adeboye.jpg" class="attachment-large size-large" alt="" loading="lazy" srcset="https://rccgmobile.org/wp-content/uploads/2020/08/Pastor-E.A-Adeboye.jpg 653w, https://rccgmobile.org/wp-content/uploads/2020/08/Pastor-E.A-Adeboye-300x168.jpg 300w, https://rccgmobile.org/wp-content/uploads/2020/08/Pastor-E.A-Adeboye-370x208.jpg 370w, https://rccgmobile.org/wp-content/uploads/2020/08/Pastor-E.A-Adeboye-407x227.jpg 407w, https://rccgmobile.org/wp-content/uploads/2020/08/Pastor-E.A-Adeboye-270x152.jpg 270w" sizes="(max-width: 653px) 100vw, 653px">														</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-9c1eba5 elementor-widget elementor-widget-text-editor" data-id="9c1eba5" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+    <div class="elementor-text-editor elementor-clearfix">
+<p style="text-align: justify;"><span style="font-size: 10.5pt; font-family: Roboto; color: #666666;">As received by the General Overseer<strong><span style="font-family: Roboto;"> (G.O.), Pastor E. A. Adeboye</span></strong>, and communicated to the headquarters leaders, our vision and mission statement shall remain intact, with a qualifying addendum in view of the peculiarity of the demography in the North American region. They are as follows:</span></p><p style="text-align: justify;"><span style="font-size: 10.5pt; color: #666666;"><strong>1.</strong><span style="font-size: 7.0pt; color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-size: 10.5pt; color: #666666;">To make heaven.</span></p><p style="text-align: justify;"><span style="font-size: 10.5pt; color: #666666;"><strong>2.</strong><span style="font-size: 7.0pt; color: #666666;"><strong>&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-size: 10.5pt; color: #666666;">To take as many people as possible with us.</span></p><p style="text-align: justify;"><span style="font-size: 10.5pt; color: #666666;"><strong>3.</strong><span style="font-size: 7.0pt; color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-size: 10.5pt; color: #666666;">To have a member of RCCG in every family of all nations.</span></p><p style="text-align: justify;"><span style="font-size: 10.5pt; color: #666666;"><strong>4.</strong><span style="font-size: 7.0pt; color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-size: 10.5pt; color: #666666;">To accomplish No. <strong>1</strong> above, holiness will be our lifestyle.</span></p><p style="text-align: justify;"><span style="font-size: 10.5pt; color: #666666;"><strong>5.</strong><span style="font-size: 7.0pt; color: #666666;"><strong>&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-size: 10.5pt; color: #666666;">To accomplish No.<strong> 2</strong> and <strong>3</strong> above, we will plant churches within five minutes walking distance in every city and town of developing countries and within five minutes driving distance in every city and town of developed countries.</span></p><p style="text-align: justify;"><span style="font-size: 10.5pt; font-family: Roboto; color: #666666;">We will pursue these objectives until every nation in the world is reached for the Lord Jesus Christ.</span></p>					</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-a3b3bb0 elementor-widget elementor-widget-spacer" data-id="a3b3bb0" data-element_type="widget" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7c28eee sc_layouts_column_icons_position_left" data-id="7c28eee" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-f460e4c elementor-widget elementor-widget-spacer" data-id="f460e4c" data-element_type="widget" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-fbf4e47 elementor-widget elementor-widget-text-editor" data-id="fbf4e47" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+    <div class="elementor-text-editor elementor-clearfix">
+<h3><strong>Mission Statement</strong></h3><p><strong><em>Matthew 5:13-16 King James Version (KJV)</em></strong></p><p><strong>13</strong> Ye are the salt of the earth: but if the salt have lost his savour, wherewith shall it be salted? it is thenceforth good for nothing, but to be cast out, and to be trodden under foot of men.</p><p><strong>14</strong> Ye are the light of the world. A city that is set on an hill cannot be hid.</p><p><strong>15</strong> Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house.</p><p><strong>16</strong> Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.</p><p>RCCG Jesus House Mobile is focused on being followers of our Lord Jesus Christ in word and deed.&nbsp; We are admonished&nbsp; to &nbsp;teach and know the unadulterated word of God.&nbsp; We desire to be the salt and light in our community.</p><p><em><strong>2 Timothy 3:15</strong></em></p><p>And that from a child thou hast known the holy scriptures, which are able to make thee wise unto salvation through faith which is in Christ Jesus.</p><p><em><strong>1 Peter 3:15</strong></em></p><p>But sanctify the Lord God in your hearts: and be ready always to give an answer to every man that asketh you a reason of the hope that is in you with meekness and fear: Weinspire to engage in in reach and out reach activities which include sharing the gospel and assisting our local community needs.</p>					</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+</div>
+</section>
+</div>
+</div>
+</div>
+    </div>
+</div>
+</section>
+
+</div>
+</div>
+</div>
+</div><!-- .entry-content -->
+
+
+</article>
+</div><!-- </.content> -->
+
+                </div><!-- </.content_wrap> -->
+        </div>
+
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-79a7c4e elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="79a7c4e" style="background-color: #F46036;">
+            <div class="elementor-container elementor-column-gap-extended">
+            <div class="elementor-row">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b78c109 sc_layouts_column_icons_position_left" data-id="b78c109" data-element_type="column">
+            <div class="elementor-column-wrap elementor-element-populated">
+            <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-803dcfb elementor-widget elementor-widget-spacer" data-id="803dcfb" data-element_type="widget" data-widget_type="spacer.default">
+            <div class="elementor-widget-container">
+            <div class="elementor-spacer">
+            <div class="elementor-spacer-inner"></div>
+            </div>
+            </div>
+            </div>
+            <section class="elementor-section elementor-inner-section elementor-element elementor-element-8975c95 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8975c95" data-element_type="section" style="padding: 0;">
+            <div class="elementor-container elementor-column-gap-extended">
+            <div class="elementor-row">
+            <div class="elementor-column elementor-col-16 elementor-inner-column elementor-element elementor-element-e934ce5 sc_layouts_column_icons_position_left" data-id="e934ce5" data-element_type="column">
+            <div class="elementor-column-wrap">
+            <div class="elementor-widget-wrap">
+                </div>
+            </div>
+            </div>
+            <div class="elementor-column elementor-col-66 elementor-inner-column elementor-element elementor-element-0fc4815 sc_layouts_column_icons_position_left" data-id="0fc4815" data-element_type="column">
+            <div class="elementor-column-wrap elementor-element-populated">
+            <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-3ae7653 elementor-widget elementor-widget-trx_sc_title" data-id="3ae7653" data-element_type="widget" data-widget_type="trx_sc_title.default">
+            <div class="elementor-widget-container">
+            <div id="trx_sc_title_1625175110" class="sc_title sc_title_default"><h2 class="sc_item_title sc_title_title sc_align_center sc_item_title_style_default trx_addons_inline_2066536190"><span class="sc_item_title_text" style="font-weight: bolder; font-size: 30px; line-height: 0;">Jesus Christ the same yesterday, and to day, and for ever. <br>(Heb 13:8)</span></h2></div><!-- /.sc_title -->		</div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="elementor-column elementor-col-16 elementor-inner-column elementor-element elementor-element-08c8e06 sc_layouts_column_icons_position_left" data-id="08c8e06" data-element_type="column">
+            <div class="elementor-column-wrap">
+            <div class="elementor-widget-wrap">
+                </div>
+            </div>
+            </div>
+                </div>
+            </div>
+            </section>
+            <div class="elementor-element elementor-element-cfc9256 elementor-widget elementor-widget-spacer" data-id="cfc9256" data-element_type="widget" data-widget_type="spacer.default">
+            <div class="elementor-widget-container">
+            <div class="elementor-spacer">
+            <div class="elementor-spacer-inner"></div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+                </div>
+            </div>
+            </section>
+  
+
+            <footer style="font-size: 16px;">
+                <div>
+                     <span class="logo"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "></span>
+                </div>
+            
+                <div class="row">
+                     <div class="kol">                
+                         <div class="link-cat" onclick="footerToggle(this)">
+                             <span class="footer-toggle"></span>
+                             <span class="footer-cat">Get in Touch</span>
+                         </div>
+                         <ul class="footer-cat-links">
+                             <li><a href=""><span><i class="fa fa-inbox"></i> info@rccgmobile.org</span></a></li>
+                             <li><a href=""><span><i class="fa fa-phone"></i> +251-378-5182</span></a></li>
+                         </ul>
+                     </div>
+                     <div class="kol">
+                         <div class="link-cat" onclick="footerToggle(this)">
+                             <span class="footer-toggle"></span>
+                             <span class="footer-cat">Home</span>
+                         </div>
+                        <ul class="footer-cat-links" style="margin: 0 0em 0px 0em;">
+                             <li><a href="{{ url_for('history') }}"><span>Our History</span></a></li>
+                             <li><a href="{{ url_for('service') }}"><span>Our Services</span></a></li>
+                             <li><a href="{{ url_for('mission') }}"><span>Our Mission</span></a></li>
+                             <li><a href="{{ url_for('pr') }}"><span>Our Priorities</span></a></li>
+                             <li><a id="values-link" href="{{ url_for('values') }}" style="cursor: pointer; pointer-events: all;">Our Values</a></li>
+                             <li><a href="{{ url_for('pastor') }}"><span>Our Pastor</span></a></li>
+                            
+                        </ul>
+                     </div>
+                     <div class="kol">
+                         <div class="link-cat" onclick="footerToggle(this)">
+                             <span class="footer-toggle"></span>
+                             <span class="footer-cat">Quick Links</span>
+                         </div>
+                         <ul class="footer-cat-links">
+                             <li><a href="{{ url_for('donate') }}"><span>Donate</span></a></li>
+                             <li><a href="{{ url_for('vid') }}"><span>Video Sermon</span></a></li>
+                             <li><a href="{{ url_for('pod') }}"><span>Podcast Sermon</span></a></li>
+                             <li><a href="{{ url_for('activities') }}"><span>Activities</span></a></li>
+                             <li><a href="{{ url_for('gallery') }}"><span>Gallery</span></a></li>
+                             <li><a href="{{ url_for('contact') }}"><span>Contact Us</span></a></li>
+                         </ul>
+                     </div>
+                     <div class="kol" id="newsletter">
+                         <span> RCCG Jesus House Mobile.</span>
+                         <form id="subscribe">
+                             <input type="email" id="subscriber-email" placeholder="Enter Email Address"/>
+                             <input type="submit" value="Subscribe" id="btn-scribe"/>
+                         </form>
+                         
+                         <div class="social-links social-2">
+                             <a href=""><i class="fa fa-facebook-f"></i></a>
+                             <a href=""><i class="fa fa-twitter"></i></a>
+                             <a href=""><i class="fa fa-youtube"></i></a>
+                             
+                         </div>
+            
+                         <div id="address">
+                             <span>Church Location</span>
+                             <ul>
+                                 <li>
+                                     <i class="fa fa-building"></i>
+                                     
+                                        444 Azalea Rd, Ste C, Mobile, AL 36609
+                                 </li>
+                                 
+                             </ul>
+                         </div>
+                         
+                     </div>
+                     <div class="social-links social-1 colu">
+                         <a href=""><i class="fa fa-facebook-f"></i></a>
+                         <a href=""><i class="fa fa-twitter"></i></a>
+                         <a href=""><i class="fa fa-youtube"></i></a>
+                         
+                     </div>
+                </div>
+                <div id="copyright">
+                    &copy; 2024 All Rights Reserved. RCCG Jesus House Mobile.
+                </div>
+             
+             </footer>
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#bar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+        // JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            var valuesLink = document.getElementById('values-link');
+            if (valuesLink) {
+                valuesLink.addEventListener('click', function(event) {
+                    // Prevent default link behavior
+                    event.preventDefault();
+                    // Navigate to the link URL manually
+                    window.location.href = valuesLink.getAttribute('href');
+                });
+            }
+        });
+
+    </script>
+
+    <script>
+        function footerToggle(footerBtn) {
+            $(footerBtn).toggleClass("btnActive");
+            $(footerBtn).next().toggleClass("active");
+        }
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true,
+                spaceBetween: 50,
+                speed: 1000,
+                effect: 'fade',
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 50) {
+                    $('.nav').addClass('affix');
+                    console.log("OK");
+                } else {
+                    $('.nav').removeClass('affix');
+                }
+            });
+
+            $(window).on('load ', function () {
+                $('.loader').fadeOut(3000);
+            });
+            
+        
+
+
+            $('.navTrigger').click(function () {
+                $(this).toggleClass('active');
+                console.log("Clicked menu");
+                $("#mainListDiv").toggleClass("show_list");
+                $("#mainListDiv").fadeIn();
+            });
+
+            function checkVisible() {
+                var windowHeight = $(window).height();
+                var scrollPos = $(document).scrollTop();
+
+                $('.equal-height').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+                $('.ns').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+            }
+
+            // Initial check
+            checkVisible();
+
+            // Check when scrolling
+            $(document).scroll(function () {
+                checkVisible();
+            });
+
+        });
+
+    </script>
+    <script>
+        // Back to top
+        var amountScrolled = 200;
+        var amountScrolledNav = 25;
+  
+        $(window).scroll(function() {
+          if ( $(window).scrollTop() > amountScrolled ) {
+            $('button.back-to-top').addClass('show');
+          } else {
+            $('button.back-to-top').removeClass('show');
+          }
+        });
+  
+        $('button.back-to-top').click(function() {
+          $('html, body').animate({
+            scrollTop: 0
+          }, 800);
+          return false;
+        });
+    </script>
+</body>
+</html>

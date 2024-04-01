@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="rlogo.png">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=TT+Moons:wght@400;700&display=swap');
+
+
+    #mainNavbar {
+    }
+
+    .navbar-dark .navbar-brand {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar-nav .nav-link {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .display-4 {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .lead {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar.scrolled {
+        background: rgb(34, 31, 31);
+        transition: background 500ms;
+    }
+
+    .font-weight-light {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .pt {
+        color: #222;
+        font-family: montserrat, Sans-serif;
+        
+        line-height: 1.2em;
+    }
+
+    h2 {
+        font-family: fjalla one, sans-serif;
+        font-size: 3.5em;
+        
+        font-style: normal;
+        line-height: 1.23em;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 6.15rem;
+        margin-bottom: 2.1rem;
+    }
+    .equal-height {
+        opacity: 0;
+        transform: translateY(90px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .equal-height.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .ns {
+        opacity: 0;
+        transform: translateX(80px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .ns.fade-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hs-responsive-embed-youtube {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        padding-top: 25px;
+    }
+    .hs-responsive-embed-youtube iframe {
+        position: absolute;
+        width: 100%!important;
+        height: 100%!important;
+    }
+
+
+    @media (min-width:1025px) {
+        .slider-title {
+            font-size: 120px;
+            color: rgb(255, 255, 255);
+
+            
+        }
+        .swiper-slide {
+            min-height: 920px;
+            text-align: center;
+            
+        }
+    }
+
+
+
+    
+
+
+
+.dropbtn {
+  background: transparent;
+  color: white;
+  
+  border: none;
+}
+.dropbtn:hover{
+    color: rgb(255, 189, 17);
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 111;
+  width: 40%;
+  margin: 0;
+  border-radius: 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 400;
+  
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {padding-left: 30px;}
+
+.dropdown:hover .dropdown-content {display: block;color: rgb(255, 189, 17);}
+
+.dropdown:hover .dropbtn {color: rgb(255, 189, 17);}
+
+
+.donate {
+  background: #005068;
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%), -webkit-linear-gradient(left, #1595bf 0%, #0e7d91 50%, #147995 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%), linear-gradient(to right, #1c7a8f 0%, #2f6b83 50%, #1e84ad 100%);
+  background-position: 0 0;
+  background-size: 200% 100%;
+  border-radius: 4px;
+  color: #fff;
+  padding: 15px 65px 15px 15px;
+  text-shadow: 1px 1px 5px #666;
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
+}
+.donate:after {
+  border-left: 1px solid #1c99b9;
+  color: #003527;
+  content: "\f004";
+  font: 20px "FontAwesome";
+  padding: 10px 0;
+  padding-left: 15px;
+  position: absolute;
+  right: 16px;
+  top: 7px;
+  -webkit-transition: all 600ms 200ms;
+  transition: all 600ms 200ms;
+}
+.donate:hover {
+  background-position: -100% 0;
+  color: white;
+}
+.donate:hover:after {
+  border-left: 1px solid #007382;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: no-repeat black;
+    
+}
+  
+
+.u-loading {
+	width: 128px;
+	height: 128px;
+	
+	margin: 48px;
+     
+}
+.u-loading__symbol {
+	background-color: transparent;
+	padding: 8px;
+	animation: loading 3s infinite;
+	border-radius: 5px;
+     
+}
+.u-loading__symbol img {
+     
+    left: 0px;
+	display: block;
+	max-width: 100%;
+	animation: loading-icon 3s infinite;
+  
+}
+ @keyframes loading {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 background-color: transparent;
+	}
+	 16% {
+		 background-color: transparent;
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+		 background-color: transparent;
+	}
+	 65% {
+		 background-color: transparent;
+	}
+	 66% {
+		 background-color: transparent;
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(-180deg);
+	}
+}
+ @keyframes loading-icon {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 16% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 65% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 66% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+}
+</style>
+<body>
+    <nav id="bar" class=" fixed-top">
+        <nav class="nav">
+            <div class="" style="min-width: 100%;">
+                <div class="logo">
+                    <a href="#"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "  width="100" height="5"></a>
+                </div>
+                
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks" >
+                        <li><a href="{{ url_for('index') }}" style="font-size: 18px;">Home</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Who are we</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('history') }}"  style="color: black; font-size: 52%">Our History</a>
+                                  <a href="{{ url_for('service') }}"  style="color: black; font-size: 52%">Our Services</a>
+                                  <a href="{{ url_for('mission') }}"  style="color: black; font-size: 52%">Our Mission</a>
+                                  <a href="{{ url_for('values') }} "  style="color: black; font-size: 52%">Our Values</a>
+                                  <a href="{{ url_for('pr') }}"    style="color: black; font-size: 52%">Our Priorities</a>
+                                  <a href="{{ url_for('pastor') }}"  style="color: black; font-size: 52%">Our Pastor</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Sermon</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('vid') }}" target="tab" style="color: black; font-size: 52%">Video Sermon</a>
+                                  <a href="{{ url_for('pod') }}" target="tab" style="color: black; font-size: 52%">Podcast Sermon</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Connect</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('prreq') }}" target="tab" style="color: black; font-size: 52%">Prayer request</a>
+                                  <a href="{{ url_for('ytlive') }}" target="tab" style="color: black; font-size: 52%">Live streaming</a>
+                                  <a href=" {{ url_for('activities') }}" target="tab" style="color: black; font-size: 52%">Activities</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="{{ url_for('contact') }}" target="tab" style="font-size: 18px;">Contact</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="" style="float: right;">
+                   
+                    <button><a href="{{ url_for('donate') }}" style="color: black; text-decoration: none;">Donate</a></button>
+                    
+                </div>
+
+                <span class="navTrigger" style="margin-top: 6%; margin-right: 23%;">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>
+    </nav>
+    
+    <section>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper" style="background-size: cover;">
+                <!-- Slides -->
+                <div class="swiper-slide slide-1">
+                    <div class="container" style="min-width: 100%;">
+                        
+                        <div class="slider-container">
+                           
+                            <div class="animated-area">
+                               
+                                <div class="slider-title cssanimation sequence leFadeInLeft pt" style="font-family: 'TT Moons', sans-serif; color: rgb(255, 255, 255);">
+                                    <span class="yelTxt">The RCCG Jesus House Mobile</span>
+                                    <div>
+                                    <span style="font-family:'TT Moons', sans-serif;">Welcome To Our<br> Church</span>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div id="space">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide-2">
+                    <div class="container">
+                        <div class="slider-container">
+                            <div class="animated-area">
+                                <div class="slider-title cssanimation sequence leFadeInLeft pt" style="font-family: 'TT Moons', sans-serif; color: rgb(255, 255, 255);">
+                                    <span class="yelTxt">The RCCG Jesus House Mobile</span>
+                                    <span style="font-family:'TT Moons', sans-serif;">Salvation Is Here Join Community</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="space">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide-3">
+                    <div class="container">
+                        <div class="slider-container">
+                            <div class="animated-area animated">
+                                <div class="slider-title cssanimation sequence leFadeInLeft pt" style="font-family: 'TT Moons', sans-serif; color: rgb(255, 255, 255);">
+                                    <span class="yelTxt">The RCCG Jesus House Mobile</span>
+                                    <span style="font-family:'TT Moons', sans-serif;">Commited to the Gospel of Jesus Christ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="space"></div>
+                    </div>
+                </div>
+                <!-- ... Other slides go here ... -->
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev" style="color: white;"></div>
+            <div class="swiper-button-next" style="color: white;"></div>
+        </div>
+    </section>
+    <button class="back-to-top" type="button"></button>
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#bar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
+
+    <div class="et_pb_section et_pb_section_1 et_pb_with_background et_section_regular ns">
+                    
+        <div class="et_pb_row et_pb_row_0 et_pb_gutters1 container">
+        <div class="et_pb_column et_pb_column_1_2 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough">    
+        <div class="et_pb_module et_pb_cta_0 et_hover_enabled et_pb_promo et_pb_text_align_center et_pb_bg_layout_dark et_had_animation">
+        <div class="et_pb_promo_description"><h2 class="et_pb_module_header">About Us</h2><div><p><span>Established in 1952, RCCG is a growing church with presence in over 190 countries. 
+        To the glory of God, RCCG is spread across the four nations of the United State, with well over 870 churches</span></p></div></div>
+        <div class="et_pb_button_wrapper"><a class="et_pb_button et_pb_promo_button" href="{{ url_for('history') }}" data-icon="">Read more</a></div>
+    </div>
+    </div>
+    <div class="et_pb_column et_pb_column_1_2 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child">
+        
+        
+        <div class="et_pb_module et_pb_cta_1 et_pb_promo  et_pb_text_align_center et_pb_bg_layout_light">
+        
+        
+        
+        
+        <div class="et_pb_promo_description"><h2 class="et_pb_module_header">Church Locator</h2><div><p>Worship at our RCCG church</p></div></div>
+        <div class="et_pb_button_wrapper"><a class="et_pb_button et_pb_promo_button" href="{{ url_for('location') }}" data-icon="">RCCG Near Me</a></div>
+    </div>
+    </div>
+        
+        
+        
+        
+    </div>
+        
+        
+    </div>
+
+    <section class="we-offer-area text-center bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="site-heading text-center">
+                        <h2> Our <span>media</span></h2>
+                        <h4></h4>
+                    </div>
+                </div>
+            </div>
+                <div class="row our-offer-items less-carousel" style="font-size: 1.67em;">
+                    <!-- Single Item -->
+                    
+                    <!-- End Single Item -->
+
+                    <!-- Single Item -->
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <a href="{{ url_for('vid') }}" target="tab" style="color: black;">
+                        <div class="item">
+                            <i class="fa fa-television"></i>
+                            <h4 style=" font-weight: bold; font-size: larger;">Latest Video Sermon</h4>
+                           
+                        </div>
+                        </a>
+                    </div>
+                    <!-- End Single Item -->
+
+                    <!-- Single Item -->
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <a href="{{ url_for('pod') }}"  target="tab" style="color: black;">
+                        <div class="item">
+                            <i class="fa fa-music"></i>
+                            <h4 style=" font-weight: bold; font-size: larger;">Latest Podcast Sermon</h4>
+                            
+                        </div>
+                        </a>
+                    </div>
+                    <!-- End Single Item -->
+
+                    <!-- Single Item -->
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <a href="{{ url_for('ytlive') }}" target="tab" style="color: black;">
+                        <div class="item">
+                            <i class="fa fa-desktop"></i>
+                            <h4 style=" font-weight: bold; font-size: larger;">Live Streaming</h4>
+                           
+                        </div>
+                        </a>
+                    </div>
+                    <!-- End Single Item -->
+
+                    <!-- Single Item -->
+                    
+                
+                </div>
+                
+        </div>
+    </section>
+
+    <section id="intro" class="container ns">
+        <div id="intro-info">
+            <div>
+                <div>
+                    <h2 class="pt" style="font-weight: bold; padding: 15px;">God values your life,You Matter To God. You Matter to Us</h2>
+                    <p style="font-size: 14px; padding-right: 25px;">We are a family friendly church, worship with us and see how we view God, Jesus, the Bible and many significant aspects of our faith.You will have a worship experience like no other.
+                        We believe in the Divine Trinity. One Triune God exists in three Persons – Father, Son and Holy Spirit – eternal in being, identical in nature, equal in power and glory and having the same attributes and perfections</p>
+                </div>
+                <div id="intro-tag-btn" >
+                    <span>Matthew 3:16-17 2 Corinthians 13:14 Hebrews 9:14 1 Peter 1:2 1 John 5:7.</span>
+                    <a href="service/values.html" class="brand-btn">Let's Talk</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="development-img">
+            <img src="bb.jpeg" alt="Mobile App Development" title="Mobile App Development"/>
+        </div>
+    </section>
+
+    <div class="loader" style="display: flex; align-items: center; justify-content: center;">
+        <div class="u-loading">
+            <div class="u-loading__symbol" >
+              <img src="src=“{{url_for(‘static’, filename=‘rccg.png’)}}” ">
+            </div>
+        </div>
+    </div>
+   
+    <div class="et_pb_section et_pb_section_2 et_section_regular">		
+        <div class="et_pb_row et_pb_row_1 et_pb_gutters1">
+        <div class="et_pb_column et_pb_column_1_3 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough">
+        <a href="{{ url_for('prreq') }}"  style="color: white; text-decoration: none;">
+        <div class="et_pb_module et_pb_text et_pb_text_0 et_hover_enabled et_clickable et_pb_text_align_center et_pb_bg_layout_dark et_had_animation">  
+        <div class="et_pb_text_inner">
+            <h3>Your prayer request</h3>
+            <p>&nbsp;</p>
+        </div>
+        </div>
+        </a>
+    <a href="{{ url_for('gallery') }}"  style="color: white; text-decoration: none;">
+    <div class="et_pb_module et_pb_text et_pb_text_1 et_hover_enabled et_clickable et_pb_text_align_center et_pb_bg_layout_dark et_had_animation" style="background-image:linear-gradient(160deg,rgba(52,88,124,0.75) 0%,rgba(52,88,124,0.9) 76%),url(http://www.hoxtongallery.com/wp-content/uploads/2017/10/2017-lindauer-install-6.jpg);">
+        
+        
+        
+        
+        <div class="et_pb_text_inner">
+            <h3>Our Gallery</h3>
+        </div>
+    </div>
+    </a>
+    </div><div class="et_pb_column et_pb_column_1_3 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough et_pb_column_empty">
+        
+        
+        
+        
+        
+    </div>
+    <a href="{{ url_for('activities') }}" style="color: white; text-decoration: none;">
+    <div class="et_pb_column et_pb_column_1_3 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough et-last-child">
+        
+        
+        
+        
+        <div class="et_pb_module et_pb_text et_pb_text_2 et_hover_enabled et_clickable et_pb_text_align_center et_pb_bg_layout_dark et_had_animation" >
+        
+        
+        
+        
+        <div class="et_pb_text_inner">
+            <h3>Activities</h3>
+            <p>&nbsp;</p>
+        </div>
+        
+        
+    </div>
+    </a>
+
+    <a href="{{ url_for('pastor') }}"  style="color: white; text-decoration: none;"> 
+    <div class="et_pb_module et_pb_text et_pb_text_3 et_hover_enabled et_clickable et_pb_text_align_center et_pb_bg_layout_dark et_had_animation" >
+        
+        
+          
+        
+        <div class="et_pb_text_inner"><h3>Our Pastor</h3>
+            <p>&nbsp;</p>
+        </div>
+        
+    </div>
+    </a>
+    </div>
+        
+        
+        
+        
+    </div>
+        
+        
+    </div>
+
+    <section id="intro" class="container bg-gray ns">
+        <div id="development-img" style="padding: 20px;">
+            <img src="src=“{{url_for(‘static’, filename=‘ms.jpg’)}}” "  alt="Mobile App Development" title="Mobile App Development"/>
+        </div>
+        <div id="intro-info">
+            <div>
+                <div>
+                    <h2 class="pt">Our Mission</h2>
+                    <p style="font-size: large; padding: 15px;">As received by the General Overseer (G.O.), Pastor E. A. Adeboye, and communicated to the Headquarters leaders, our vision and mission statement shall remain intact, with a qualifying addendum in view of the peculiarity of the demography in the North American region. They are as follows:</p>
+                    
+                    <div id="bb" >
+                    
+                        <a href="{{ url_for('mission') }}"  target="tab" class="brand-btn">Let's Talk</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        
+    </section>
+   <section class="container">
+    <div class="et_pb_column_4_4 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough et-last-child">
+	<div class="et_pb_module et_pb_text et_pb_text_4 et_hover_enabled  et_pb_text_align_center et_pb_bg_layout_light">        
+        <div class="et_pb_text_inner"><h4>RCCG 2023 Convention</h4></div>
+    </div>
+    <div class="et_pb_module et_pb_code et_pb_code_0">
+        
+        
+        
+        
+        <div class="hs-responsive-embed-youtube"><iframe src="https://www.youtube.com/embed/i67LnZLsrAk?si=GTwsiVyLJdY6rVYJ" title="YouTube video player"  frameborder="0" allowfullscreen=""></iframe></div>
+    </div>
+    <div class="et_pb_module et_pb_cta_2 et_pb_promo  et_pb_text_align_center et_pb_bg_layout_dark yb" style="margin-top:3%">
+        
+        
+        
+        
+        <div class="et_pb_promo_description">
+            <h2 class="et_pb_module_header">RCCG 2023 CONVENTION | BEYOND EXPECTATIONS</h2>
+        </div>
+        <div class="et_pb_button_wrapper"><a class="et_pb_button et_pb_promo_button" href="https://youtube.com/@rccgjhm" target="_blank" data-icon="">RCCG Youtube</a></div>
+    </div>
+
+    </div>
+   </section>
+    
+   <section id="intro" class="bg-gray ns">
+    <div id="development-img" style="padding: 20px;">
+        <img src="src=“{{url_for(‘static’, filename=‘pr.jpg’)}}” "  alt="Mobile App Development" title="Mobile App Development"/>
+    </div>
+    <div id="intro-info">
+        <div>
+            <div>
+                <h2 class="pt">Our Priorities</h2>
+                <p style="font-size: large; padding: 15px;">We Desire To Worship God In Spirit And In Truth In Our Private And Public Worship.
+                    The LORD only shall be the object of our worship. We seek to hear from God and also desire the presence of His glory in our 
+                    gatherings. 1 Kings 8:11; 1 Chronicles 16:29; Psalm 96:6; John 4:23-24; Revelation 22:9</p>
+                
+                <div id="bb" >
+                
+                    <a href="{{ url_for('service') }}"  class="brand-btn">Learn More</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    </section>
+
+    <section id="intro" class="">
+        <div id="intro-info">
+            <div>
+                <div>
+                    <h2 class="pt">Our Values</h2>
+                    <p style="font-size: 20px;">
+                        We Value The Pursuit Of God
+                        We thirst for His presence and to know more of Him through private and public worship, the Word and prayer
+                    </p>
+                </div>
+                <div id="intro-tag-btt" >
+                    <span>Psalm 42:1-2, 63:1-3; Matt 5:23; Luke 6:21</span>
+                    <a href="{{ url_for('values') }}"  class="brand-btn">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="development-img">
+            <img  src="src=“{{url_for(‘static’, filename=‘bible.jpg’)}}” ">
+        </div>
+    </section>
+
+<hr>
+    <div style="font: 20px 'Helvetica'; display: flex; justify-content: center;" class="container">
+            
+        <a href="{{ url_for('donate') }}"  class="donate" style="display: inline-block; margin: 20px; position: relative; text-decoration: none;">DONATE</a>
+    </div>
+
+    <footer style="font-size: 16px;">
+        <div>
+             <span class="logo">
+                <img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” ">
+            </span>
+        </div>
+    
+        <div class="row">
+             <div class="kol">                
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Get in Touch</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href=""><span><i class="fa fa-inbox"></i> info@rccgmobile.org</span></a></li>
+                     <li><a href=""><span><i class="fa fa-phone"></i> +251-378-5182</span></a></li>
+                 </ul>
+             </div>
+             <div class="kol">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Home</span>
+                 </div>
+                <ul class="footer-cat-links" style="margin: 0 0em 0px 0em;">
+                     <li><a href="{{ url_for('history') }}"><span>Our History</span></a></li>
+                     <li><a href="{{ url_for('service') }}"><span>Our Services</span></a></li>
+                     <li><a href="{{ url_for('mission') }}"><span>Our Mission</span></a></li>
+                     <li><a href="{{ url_for('pr') }}"><span>Our Priorities</span></a></li>
+                     <li><a id="values-link" href="{{ url_for('values') }}" style="cursor: pointer; pointer-events: all;">Our Values</a></li>
+                     <li><a href="{{ url_for('pastor') }}"><span>Our Pastor</span></a></li>
+                    
+                </ul>
+             </div>
+             <div class="kol">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Quick Links</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href="{{ url_for('donate') }}"><span>Donate</span></a></li>
+                     <li><a href="{{ url_for('vid') }}"><span>Video Sermon</span></a></li>
+                     <li><a href="{{ url_for('pod') }}"><span>Podcast Sermon</span></a></li>
+                     <li><a href="{{ url_for('activities') }}"><span>Activities</span></a></li>
+                     <li><a href="{{ url_for('gallery') }}"><span>Gallery</span></a></li>
+                     <li><a href="{{ url_for('contact') }}"><span>Contact Us</span></a></li>
+                 </ul>
+             </div>
+             <div class="kol" id="newsletter">
+                 <span> RCCG Jesus House Mobile.</span>
+                 <form id="subscribe">
+                     <input type="email" id="subscriber-email" placeholder="Enter Email Address"/>
+                     <input type="submit" value="Subscribe" id="btn-scribe"/>
+                 </form>
+                 
+                 <div class="social-links social-2">
+                     <a href=""><i class="fa fa-facebook-f"></i></a>
+                     <a href=""><i class="fa fa-twitter"></i></a>
+                     <a href=""><i class="fa fa-youtube"></i></a>
+                     
+                 </div>
+    
+                 <div id="address">
+                     <span>Church Location</span>
+                     <ul>
+                         <li>
+                             <i class="fa fa-building"></i>
+                             
+                                444 Azalea Rd, Ste C, Mobile, AL 36609
+                         </li>
+                         
+                     </ul>
+                 </div>
+                 
+             </div>
+             <div class="social-links social-1 colu">
+                 <a href=""><i class="fa fa-facebook-f"></i></a>
+                 <a href=""><i class="fa fa-twitter"></i></a>
+                 <a href=""><i class="fa fa-youtube"></i></a>
+                 
+             </div>
+        </div>
+        <div id="copyright">
+            &copy; 2024 All Rights Reserved. RCCG Jesus House Mobile.
+        </div>
+     
+     </footer>
+ 
+    <script>
+        function footerToggle(footerBtn) {
+            $(footerBtn).toggleClass("btnActive");
+            $(footerBtn).next().toggleClass("active");
+        }
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true,
+                spaceBetween: 50,
+                speed: 1000,
+                effect: 'fade',
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 50) {
+                    $('.nav').addClass('affix');
+                    console.log("OK");
+                } else {
+                    $('.nav').removeClass('affix');
+                }
+            });
+
+            $(window).on('load ', function () {
+                $('.loader').fadeOut(3000);
+            });
+            
+        
+
+
+            $('.navTrigger').click(function () {
+                $(this).toggleClass('active');
+                console.log("Clicked menu");
+                $("#mainListDiv").toggleClass("show_list");
+                $("#mainListDiv").fadeIn();
+            });
+
+            function checkVisible() {
+                var windowHeight = $(window).height();
+                var scrollPos = $(document).scrollTop();
+
+                $('.equal-height').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+                $('.ns').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+            }
+
+            // Initial check
+            checkVisible();
+
+            // Check when scrolling
+            $(document).scroll(function () {
+                checkVisible();
+            });
+
+        });
+
+    </script>
+        <script>
+            // Back to top
+            var amountScrolled = 200;
+            var amountScrolledNav = 25;
+      
+            $(window).scroll(function() {
+              if ( $(window).scrollTop() > amountScrolled ) {
+                $('button.back-to-top').addClass('show');
+              } else {
+                $('button.back-to-top').removeClass('show');
+              }
+            });
+      
+            $('button.back-to-top').click(function() {
+              $('html, body').animate({
+                scrollTop: 0
+              }, 800);
+              return false;
+            });
+        </script>
+</body>
+</html>

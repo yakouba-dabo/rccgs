@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./rlogo.png">
+</head>
+<style>
+    #mainNavbar {
+    }
+    #our{
+      font-size: 33px;
+      font-family: 'fjalla one 'sans-serif;
+      font-weight: bolder;
+      outline: 0;
+
+    }
+    .navbar-dark .navbar-brand {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar-nav .nav-link {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .display-4 {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .lead {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar.scrolled {
+        background: rgb(34, 31, 31);
+        transition: background 500ms;
+    }
+
+    .font-weight-light {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .pt {
+        color: #222;
+        font-family: montserrat, Sans-serif;
+        
+        line-height: 1.2em;
+    }
+
+    h2 {
+        font-family: fjalla one, sans-serif;
+        font-size: 3.5em;
+        
+        font-style: normal;
+        line-height: 1.23em;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 6.15rem;
+        margin-bottom: 2.1rem;
+    }
+    .equal-height {
+        opacity: 0;
+        transform: translateY(90px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .equal-height.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .ns {
+        opacity: 0;
+        transform: translateX(80px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .ns.fade-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hs-responsive-embed-youtube {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        padding-top: 25px;
+    }
+    .hs-responsive-embed-youtube iframe {
+        position: absolute;
+        width: 100%!important;
+        height: 100%!important;
+    }
+
+    .payment-box{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-color: #1B998B;
+  border-radius: 2.5rem;
+  box-shadow: 0.25rem 0.25rem 1rem 0.5rem #1D1A30;
+  
+  
+  /*Size settings*/
+  min-height: 20rem;
+  max-width: 20rem;
+  
+  /*Content align*/
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.payment-title{  
+  font-weight:bold;
+  font-size: 2rem;
+  color: #C5D86D;
+}
+
+.lock-handle-outer{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-bottom: none;
+  border-color: #1B998B;
+  border-radius: 1rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.2rem #1D1A30;
+  
+  /*Size settings*/
+  min-height: 10rem;
+  max-width: 15rem;
+  
+  /*Content align*/
+  justify-content: center;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.lock-handle-inner{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-bottom: none;
+  border-color: #1B998B;
+  border-radius: 1rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.2rem #1D1A30;
+  
+  /*Size settings*/
+  min-height: 10rem;
+  max-width: 8rem;
+  
+  /*Content align*/
+  justify-content: bottom;
+  margin: auto;
+  vertical-align:bottom;
+}
+
+/*Buttons*/
+.donate-btn{  
+  /*Size settings*/
+  min-width:15rem;
+  min-height:3rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #1B998B;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem #1D1A30;
+  
+  /*Text settings*/
+  font-weight:bold;
+  font-size: 1rem;
+  color: #C5D86D;
+  cursor:pointer;
+  
+}
+
+.donate-btn:hover{
+  background-color: #C5D86D;
+  color:#F46036;
+  transition: 0.1s;
+  box-shadow: 0.1rem 0.1rem 1rem 0.5rem #1D1A30;
+}
+.donate-btn:active{
+  background-color: #1D1A30;
+  color:#F46036;
+  transition: 0.1s;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem #1D1A30;
+}
+
+/*Key hole items*/
+
+.key-hole{
+  /*Circle*/
+  border: 0.35rem solid;;
+  border-color: #1B998B;
+  border-bottom: 0rem;
+  width: 3rem;
+  min-height:3rem;
+  border-radius: 2rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem 1rem #1D1A30;
+  
+  
+  /*Content align*/
+  margin: auto;
+  vertical-align:middle;
+}
+
+.key-box{
+  /*Triangle*/
+  border: 0.35rem solid;;
+  border-color: #1B998B;
+  border-top: 0rem;
+  width: 2rem;
+  min-height:3rem;
+  border-radius: 1rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem 0.5rem #1D1A30;
+  
+  
+  /*Content align*/
+  margin: auto;
+  vertical-align:middle;
+}
+
+
+.keyarea{
+  padding: 1rem;
+}
+
+
+
+
+
+
+.dropbtn {
+  background: transparent;
+  color: white;
+  
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 30%;
+  border-radius: 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: white; opacity: 0.3; color: #000;}
+
+
+.donate {
+  background: #005068;
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%), -webkit-linear-gradient(left, #1595bf 0%, #0e7d91 50%, #147995 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%), linear-gradient(to right, #1c7a8f 0%, #2f6b83 50%, #1e84ad 100%);
+  background-position: 0 0;
+  background-size: 200% 100%;
+  border-radius: 4px;
+  color: #fff;
+  padding: 15px 65px 15px 15px;
+  text-shadow: 1px 1px 5px #666;
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
+}
+.donate:after {
+  border-left: 1px solid #1c99b9;
+  color: #003527;
+  content: "\f004";
+  font: 20px "FontAwesome";
+  padding: 10px 0;
+  padding-left: 15px;
+  position: absolute;
+  right: 16px;
+  top: 7px;
+  -webkit-transition: all 600ms 200ms;
+  transition: all 600ms 200ms;
+}
+.donate:hover {
+  background-position: -100% 0;
+  color: white;
+}
+.donate:hover:after {
+  border-left: 1px solid #007382;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: no-repeat black;
+    
+}
+  
+
+.u-loading {
+	width: 128px;
+	height: 128px;
+	
+	margin: 48px;
+     
+}
+.u-loading__symbol {
+	background-color: transparent;
+	padding: 8px;
+	animation: loading 3s infinite;
+	border-radius: 5px;
+     
+}
+.u-loading__symbol img {
+     
+    left: 0px;
+	display: block;
+	max-width: 100%;
+	animation: loading-icon 3s infinite;
+  
+}
+ @keyframes loading {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 background-color: transparent;
+	}
+	 16% {
+		 background-color: transparent;
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+		 background-color: transparent;
+	}
+	 65% {
+		 background-color: transparent;
+	}
+	 66% {
+		 background-color: transparent;
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(-180deg);
+	}
+}
+ @keyframes loading-icon {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 16% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 65% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 66% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+}
+
+.slide-1 {
+    background: url("sl.jpg");
+    background-size:cover;
+    
+    
+   
+}
+.slider-container {
+    min-height: 100%;
+}
+
+.sc_services_item_text:hover{
+    color: white;
+}
+
+
+
+.elementor-2093 .elementor-element.elementor-element-8ca218e:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-8ca218e > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #ffffff;
+                background-image: url("http://rccgmobile.org/wp-content/uploads/2018/10/home3_bg-nocopyright.png");
+                background-position: top center;
+                background-repeat: repeat;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-8ca218e {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-8ca218e > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-d51020d:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-d51020d > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: rgba(26,20,17,0.5);
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-d51020d {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+                margin-top: -147px;
+                margin-bottom: 0px;
+                z-index: 1;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-d51020d > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-516cc97.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-516cc97.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-0579d9a .elementor-spacer-inner {
+                height: 25px;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-c76122b.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-c76122b.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-f3dd0fd .elementor-spacer-inner {
+                height: 25px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-bd68a79:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-bd68a79 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #1a1411;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-bd68a79 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-bd68a79 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-def80bd.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-def80bd.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-9b130f0 .elementor-spacer-inner {
+                height: 10px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-ec7c650 .elementor-spacer-inner {
+                height: 10px;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-f925284.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-f925284.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-327a473 .elementor-spacer-inner {
+                height: 15px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-41b4646 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-af2a72c.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-af2a72c.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-af2a72c > .elementor-element-populated > .elementor-widget-wrap {
+                padding: 0% 14% 0% 0%;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-f92b479 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-08d18b1 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-9dc02b9:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-9dc02b9 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: rgba(247,243,238,0.9);
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-9dc02b9 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-9dc02b9 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-811c621 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-604bd57 > .elementor-widget-container {
+                box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-823114d .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-62d3795 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-3da50fe:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-3da50fe > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-image: url("http://rccgmobile.org/wp-content/uploads/2018/06/bg_location-copyright.jpg");
+                background-position: top center;
+                background-repeat: no-repeat;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-3da50fe {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-3da50fe > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-421a643 .elementor-spacer-inner {
+                height: 260px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-5993a8f .elementor-spacer-inner {
+                height: 6px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-a35193f .elementor-heading-title {
+                color: #ffffff;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-a35193f > .elementor-widget-container {
+                padding: 0% 10% 0% 0%;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-26968aa .elementor-spacer-inner {
+                height: 36px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-0a92ea2 .elementor-spacer-inner {
+                height: 285px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-22fbdc8 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-d7b5967 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-3599c97 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-4825f7a .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-e15758c:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-e15758c > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: rgba(247,243,238,0.9);
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-e15758c {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-e15758c > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-e941bea .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-b775630 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-86a9be2 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-56bc769 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-a32dafa:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-a32dafa > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-image: url("http://rccgmobile.org/wp-content/uploads/2018/06/bg_video-copyright.jpg");
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-a32dafa {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-a32dafa > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-dcbccb4 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-5ae0d30 .elementor-spacer-inner {
+                height: 140px;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-d1cf840.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-d1cf840.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-5560628 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-7e99ea1 > .elementor-widget-container {
+                padding: 0% 14% 0% 0%;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-5b56cfa .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-c906372 .elementor-spacer-inner {
+                height: 50px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-84253b9:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-84253b9 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #f26837;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-84253b9 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-84253b9 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-5f385ca .elementor-spacer-inner {
+                height: 110px;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-52cb606 .elementor-spacer-inner {
+                height: 110px;
+            }
+
+            .elementor-bc-flex-widget .elementor-2093 .elementor-element.elementor-element-e873c7c.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-2093 .elementor-element.elementor-element-e873c7c.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-kit-2093 {
+                --e-global-color-primary: #6EC1E4;
+                --e-global-color-secondary: #54595F;
+                --e-global-color-text: #7A7A7A;
+                --e-global-color-accent: #61CE70;
+                --e-global-color-4a56ff6: #4054B2;
+                --e-global-color-16a0d30: #23A455;
+                --e-global-color-492d61cc: #000;
+                --e-global-color-496f740c: #FFF;
+                --e-global-typography-primary-font-family: "Roboto";
+                --e-global-typography-primary-font-weight: 600;
+                --e-global-typography-secondary-font-family: "Roboto Slab";
+                --e-global-typography-secondary-font-weight: 400;
+                --e-global-typography-text-font-family: "Roboto";
+                --e-global-typography-text-font-weight: 400;
+                --e-global-typography-accent-font-family: "Roboto";
+                --e-global-typography-accent-font-weight: 500;
+            }
+
+            .elementor-section.elementor-section-boxed > .elementor-container {
+                max-width: 1140px;
+            }
+
+            .elementor-widget:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+
+            h1.entry-title {
+                display: var(--page-title-display);
+            }
+
+            @media(min-width: 767px) {
+                .elementor-2093 .elementor-element.elementor-element-516cc97 {
+                    width:35%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-c76122b {
+                    width: 65%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-def80bd {
+                    width: 35%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-f925284 {
+                    width: 65%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-1636531 {
+                    width: 20%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e4f9261 {
+                    width: 80%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-3ceca36 {
+                    width: 75%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e873c7c {
+                    width: 25%;
+                }
+            }
+
+            @media(max-width: 1024px) and (min-width:767px) {
+                .elementor-2093 .elementor-element.elementor-element-1636531 {
+                    width:20%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e4f9261 {
+                    width: 45%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-3ceca36 {
+                    width: 100%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e873c7c {
+                    width: 100%;
+                }
+            }
+
+            @media(max-width: 1024px) {
+                .elementor-2093 .elementor-element.elementor-element-41b4646 .elementor-spacer-inner {
+                    height:80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-08d18b1 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-811c621 .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-823114d .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-62d3795 .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-421a643 .elementor-spacer-inner {
+                    height: 120px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-0a92ea2 .elementor-spacer-inner {
+                    height: 120px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-22fbdc8 .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-d7b5967 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-3599c97 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-4825f7a .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e941bea .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-b775630 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-86a9be2 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-56bc769 .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-dcbccb4 .elementor-spacer-inner {
+                    height: 100px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5ae0d30 .elementor-spacer-inner {
+                    height: 100px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5560628 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5b56cfa .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5f385ca .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-52cb606 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-1a36063 .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-section.elementor-section-boxed > .elementor-container {
+                    max-width: 1024px;
+                }
+            }
+
+            @media(max-width: 766px) {
+                .elementor-2093 .elementor-element.elementor-element-4140339 > .elementor-widget-container {
+                    margin:-40px 0px 0px 0px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-41b4646 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-f92b479 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-08d18b1 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-811c621 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-823114d .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-62d3795 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-3da50fe:not(.elementor-motion-effects-element-type-background), .elementor-2093 .elementor-element.elementor-element-3da50fe > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                    background-position: 61% -114px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-421a643 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-1636531 {
+                    width: 40%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e4f9261 {
+                    width: 50%;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-0a92ea2 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-22fbdc8 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-3599c97 .elementor-spacer-inner {
+                    height: 20px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-4825f7a .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-e941bea .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-86a9be2 .elementor-spacer-inner {
+                    height: 20px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-56bc769 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-dcbccb4 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5ae0d30 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-c906372 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-5f385ca .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-2093 .elementor-element.elementor-element-1a36063 .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-section.elementor-section-boxed > .elementor-container {
+                    max-width: 767px;
+                }
+            }
+
+            .elementor-348 .elementor-element.elementor-element-52866f0:not(.elementor-motion-effects-element-type-background), .elementor-348 .elementor-element.elementor-element-52866f0 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #ffffff;
+                background-image: url("http://rccgmobile.org/wp-content/uploads/2018/10/about2_bg-nocopyright.png");
+                background-position: top center;
+                background-repeat: no-repeat;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-52866f0 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-52866f0 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-650b344 .elementor-spacer-inner {
+                height: 95px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-b35c786 .elementor-spacer-inner {
+                height: 100px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-bbaccab .elementor-spacer-inner {
+                height: 70px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-d5fe1b8 .elementor-spacer-inner {
+                height: 100px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-8f6409a .elementor-spacer-inner {
+                height: 70px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-392b046 .elementor-spacer-inner {
+                height: 100px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-11886e2 .elementor-spacer-inner {
+                height: 70px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-0b8f406 .elementor-spacer-inner {
+                height: 100px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-3288c75 .elementor-spacer-inner {
+                height: 70px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-2dba54c .elementor-spacer-inner {
+                height: 100px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-d7e1088 .elementor-spacer-inner {
+                height: 70px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-0ec0c48:not(.elementor-motion-effects-element-type-background), .elementor-348 .elementor-element.elementor-element-0ec0c48 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #600707;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-0ec0c48 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-0ec0c48 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-42835ce .elementor-spacer-inner {
+                height: 90px;
+            }
+
+            .elementor-348 .elementor-element.elementor-element-35db931 .elementor-spacer-inner {
+                height: 90px;
+            }
+
+            @media(max-width: 1024px) {
+                .elementor-348 .elementor-element.elementor-element-650b344 .elementor-spacer-inner {
+                    height:80px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-b35c786 .elementor-spacer-inner {
+                    height: 70px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-bbaccab .elementor-spacer-inner {
+                    height: 50px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-d5fe1b8 .elementor-spacer-inner {
+                    height: 70px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-8f6409a .elementor-spacer-inner {
+                    height: 50px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-392b046 .elementor-spacer-inner {
+                    height: 70px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-11886e2 .elementor-spacer-inner {
+                    height: 50px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-0b8f406 .elementor-spacer-inner {
+                    height: 70px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-3288c75 .elementor-spacer-inner {
+                    height: 50px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-2dba54c .elementor-spacer-inner {
+                    height: 70px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-d7e1088 .elementor-spacer-inner {
+                    height: 50px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-42835ce .elementor-spacer-inner {
+                    height: 80px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-35db931 .elementor-spacer-inner {
+                    height: 80px;
+                }
+            }
+
+            @media(max-width: 766px) {
+                .elementor-348 .elementor-element.elementor-element-650b344 .elementor-spacer-inner {
+                    height:20px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-b35c786 .elementor-spacer-inner {
+                    height: 70px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-bbaccab .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-d5fe1b8 .elementor-spacer-inner {
+                    height: 70px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-8f6409a .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-392b046 .elementor-spacer-inner {
+                    height: 70px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-11886e2 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-0b8f406 .elementor-spacer-inner {
+                    height: 70px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-3288c75 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-2dba54c .elementor-spacer-inner {
+                    height: 70px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-d7e1088 .elementor-spacer-inner {
+                    height: 40px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-42835ce .elementor-spacer-inner {
+                    height: 60px;
+                }
+
+                .elementor-348 .elementor-element.elementor-element-35db931 .elementor-spacer-inner {
+                    height: 60px;
+                }
+            }
+
+            .elementor-399 .elementor-element.elementor-element-3f21914:not(.elementor-motion-effects-element-type-background), .elementor-399 .elementor-element.elementor-element-3f21914 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #1a1411;
+            }
+
+            .elementor-399 .elementor-element.elementor-element-3f21914 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-399 .elementor-element.elementor-element-3f21914 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-399 .elementor-element.elementor-element-d37d849 .elementor-spacer-inner {
+                height: 107px;
+            }
+
+            .elementor-bc-flex-widget .elementor-399 .elementor-element.elementor-element-129cf00.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-399 .elementor-element.elementor-element-129cf00.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-399 .elementor-element.elementor-element-8619aaf > .elementor-widget-container {
+                padding: 0% 20% 0% 0%;
+            }
+
+            .elementor-399 .elementor-element.elementor-element-5ae4bb1 .elementor-spacer-inner {
+                height: 88px;
+            }
+
+            .elementor-399 .elementor-element.elementor-element-f59ceba .elementor-spacer-inner {
+                height: 38px;
+            }
+
+            @media(max-width: 1024px) {
+                .elementor-399 .elementor-element.elementor-element-d37d849 .elementor-spacer-inner {
+                    height:50px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-8619aaf > .elementor-widget-container {
+                    padding: 0px 0px 0px 0px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-192f80d .elementor-spacer-inner {
+                    height: 50px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-821ca24 .elementor-spacer-inner {
+                    height: 50px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-3042185 .elementor-spacer-inner {
+                    height: 50px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-2447d93 .elementor-spacer-inner {
+                    height: 50px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-5ae4bb1 .elementor-spacer-inner {
+                    height: 50px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-f59ceba .elementor-spacer-inner {
+                    height: 50px;
+                }
+            }
+
+            @media(max-width: 766px) {
+                .elementor-399 .elementor-element.elementor-element-d37d849 .elementor-spacer-inner {
+                    height:30px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-8619aaf > .elementor-widget-container {
+                    padding: 0px 0px 0px 0px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-7b3adca {
+                    width: 50%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-192f80d .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-fed6313 {
+                    width: 50%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-821ca24 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-170016e {
+                    width: 50%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-3042185 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-a876a0d {
+                    width: 50%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-2447d93 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-5ae4bb1 .elementor-spacer-inner {
+                    height: 30px;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-f59ceba .elementor-spacer-inner {
+                    height: 30px;
+                }
+            }
+
+            @media(min-width: 767px) {
+                .elementor-399 .elementor-element.elementor-element-129cf00 {
+                    width:34%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-7b3adca {
+                    width: 16.5%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-fed6313 {
+                    width: 16.5%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-170016e {
+                    width: 16.5%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-a876a0d {
+                    width: 16.5%;
+                }
+            }
+
+            @media(max-width: 1024px) and (min-width:767px) {
+                .elementor-399 .elementor-element.elementor-element-129cf00 {
+                    width:100%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-7b3adca {
+                    width: 25%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-fed6313 {
+                    width: 25%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-170016e {
+                    width: 25%;
+                }
+
+                .elementor-399 .elementor-element.elementor-element-a876a0d {
+                    width: 25%;
+                }
+            }
+
+            
+            .elementor-1114 .elementor-element.elementor-element-9a521d0:not(.elementor-motion-effects-element-type-background), .elementor-1114 .elementor-element.elementor-element-9a521d0 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-image: url("https://rccgmobile.org/wp-content/uploads/2018/10/rccg-ban-4.jpg");
+                background-size: cover;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-9a521d0 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-9a521d0 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-10dd671 > .elementor-container > .elementor-row > .elementor-column > .elementor-column-wrap > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-532739d > .elementor-container > .elementor-row > .elementor-column > .elementor-column-wrap > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-532739d {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                padding: 0px 15px 0px 15px;
+                z-index: 100;
+            }
+
+            .elementor-bc-flex-widget .elementor-1114 .elementor-element.elementor-element-1c49fbb.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-1c49fbb.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-adbea3c .logo_image {
+                max-height: 39px;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-a73cdcc {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                padding: 0px 15px 0px 15px;
+                z-index: 100;
+            }
+
+            .elementor-bc-flex-widget .elementor-1114 .elementor-element.elementor-element-3c189fa.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-3c189fa.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-1747bad .logo_image {
+                max-height: 39px;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-1277138 {
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-1277138 > .elementor-background-overlay {
+                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            }
+
+            .elementor-1114 .elementor-element.elementor-element-2a057ff .sc_layouts_title {
+                min-height: 0px;
+            }
+
+            @media(max-width: 766px) {
+                .elementor-1114 .elementor-element.elementor-element-a73cdcc {
+                    padding:20px 0px 0px 0px;
+                }
+
+                .elementor-1114 .elementor-element.elementor-element-3c189fa {
+                    width: 40%;
+                }
+
+                .elementor-1114 .elementor-element.elementor-element-89644ca {
+                    width: 60%;
+                }
+
+                .elementor-1114 .elementor-element.elementor-element-9e22047 > .elementor-widget-container {
+                    margin: 0px 0px 0px 0px;
+                }
+            }
+
+            @media(min-width: 767px) {
+                .elementor-1114 .elementor-element.elementor-element-1c49fbb {
+                    width:24.333%;
+                }
+
+                .elementor-1114 .elementor-element.elementor-element-c91edfd {
+                    width: 75%;
+                }
+            }
+
+            @media(max-width: 1024px) and (min-width:767px) {
+                .elementor-1114 .elementor-element.elementor-element-1c49fbb {
+                    width:15%;
+                }
+
+                .elementor-1114 .elementor-element.elementor-element-c91edfd {
+                    width: 85%;
+                }
+            }
+            .trx_addons_inline_1396469900 img {
+                max-height: 39px;
+            }
+
+            .trx_addons_inline_1833815434 img {
+                max-height: 39px;
+            }
+
+            .trx_addons_inline_1658768911 {
+                color: #ffffff !important
+            }
+
+            .custom-logo-link,.sc_layouts_logo {
+                font-size: 2em
+            }
+
+            .slider-title {
+            
+            margin-top: 70%;
+        }
+
+
+@media only screen and (min-width : 1024px) {
+     
+     .slider-title {
+         font-size: 80px;
+         margin-top: 15%;
+     }
+     .dropdown-content {
+         width: 200px;
+     }
+ }
+</style>
+<body>
+  <nav id="bar" class=" fixed-top">
+    <nav class="nav">
+        <div class="" style="min-width: 100%;">
+            <div class="logo">
+                <a href="#"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” " width="100" height="5"></a>
+            </div>
+            
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks" >
+                    <li><a href="{{ url_for('index') }}" style="font-size: 18px;">Home</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropbtn" style="font-size: 18px;">Who are we</a>
+                            <div class="dropdown-content">
+                              <a href="{{ url_for('history') }}"  style="color: black; font-size: 52%">Our History</a>
+                              <a href="{{ url_for('service') }}"  style="color: black; font-size: 52%">Our Services</a>
+                              <a href="{{ url_for('mission') }}"  style="color: black; font-size: 52%">Our Mission</a>
+                              <a href="{{ url_for('values') }} "  style="color: black; font-size: 52%">Our Values</a>
+                              <a href="{{ url_for('pr') }}"    style="color: black; font-size: 52%">Our Priorities</a>
+                              <a href="{{ url_for('pastor') }}"  style="color: black; font-size: 52%">Our Pastor</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropbtn" style="font-size: 18px;">Sermon</a>
+                            <div class="dropdown-content">
+                              <a href="{{ url_for('vid') }}" target="tab" style="color: black; font-size: 52%">Video Sermon</a>
+                              <a href="{{ url_for('pod') }}" target="tab" style="color: black; font-size: 52%">Podcast Sermon</a>
+                              
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropbtn" style="font-size: 18px;">Connect</a>
+                            <div class="dropdown-content">
+                              <a href="{{ url_for('prreq') }}" target="tab" style="color: black; font-size: 52%">Prayer request</a>
+                              <a href="{{ url_for('ytlive') }}" target="tab" style="color: black; font-size: 52%">Live streaming</a>
+                              <a href=" {{ url_for('activities') }}" target="tab" style="color: black; font-size: 52%">Activities</a>
+                              
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="{{ url_for('contact') }}" target="tab" style="font-size: 18px;">Contact</a></li>
+                    
+                </ul>
+            </div>
+            <div class="" style="float: right;">
+               
+                <button><a href="{{ url_for('donate') }}" style="color: black; text-decoration: none;">Donate</a></button>
+                
+            </div>
+
+            <span class="navTrigger" style="margin-top: 6%; margin-right: 23%;">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+</nav>
+
+    <button class="back-to-top" type="button"></button>
+    <section>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper" style="background-size: cover;">
+                <!-- Slides -->
+                <div class="swiper-slide slide-1">
+                    <div class="container">
+                        <div class="slider-container">
+                            <div class="animated-area">
+                                <p class="slider-title cssanimation sequence leFadeInLeft pt" style="color: white;">Our Values</p>
+                            </div>
+                           
+                            <div id="space">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ... Other slides go here ... -->
+            </div>
+            <!-- If we need navigation buttons -->
+            
+        </div>
+    </section>
+
+    <div class="content_wrap">
+        <div class="content">
+          <article id="post-348" class="post_item_single post_type_page post-348 page type-page status-publish hentry">
+            <div class="post_content entry-content">
+              <div data-elementor-type="wp-post" data-elementor-id="348" class="elementor elementor-348" data-elementor-settings="[]">
+                <div class="elementor-inner">
+                  <div class="elementor-section-wrap">
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-52866f0 elementor-section-stretched hide_bg_image_on_tablet hide_bg_image_on_mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="52866f0" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+                      <div class="elementor-container elementor-column-gap-no">
+                        <div class="elementor-row">
+                          <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4113e56 sc_layouts_column_icons_position_left" data-id="4113e56" data-element_type="column">
+                            <div class="elementor-column-wrap elementor-element-populated">
+                              <div class="elementor-widget-wrap">
+                                <section class="elementor-section elementor-inner-section elementor-element elementor-element-72207c3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="72207c3" data-element_type="section">
+                                  <div class="elementor-container elementor-column-gap-no">
+                                    <div class="elementor-row">
+                                      <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-2ce836e sc_layouts_column_icons_position_left" data-id="2ce836e" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                          <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-650b344 elementor-widget elementor-widget-spacer" data-id="650b344" data-element_type="widget" data-widget_type="spacer.default">
+                                              <div class="elementor-widget-container">
+                                                <div class="elementor-spacer">
+                                                  <div class="elementor-spacer-inner"></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-188eaf8 elementor-widget elementor-widget-trx_sc_title" data-id="188eaf8" data-element_type="widget" data-widget_type="trx_sc_title.default">
+                                              <div class="elementor-widget-container">
+                                                <div id="trx_sc_title_1074383559" class="sc_title sc_title_accent">
+                                                  <h2 class="sc_item_title sc_title_title sc_align_center sc_item_title_style_accent">
+                                                    <span class="sc_item_title_text" id="our">OUR VALUES</span>
+                                                  </h2>
+                                                </div>
+                                                <!-- /.sc_title -->
+                                              </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-b35c786 elementor-widget elementor-widget-spacer" data-id="b35c786" data-element_type="widget" data-widget_type="spacer.default">
+                                              <div class="elementor-widget-container">
+                                                <div class="elementor-spacer">
+                                                  <div class="elementor-spacer-inner"></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-0568df7 elementor-widget elementor-widget-trx_sc_icons" data-id="0568df7" data-element_type="widget" data-widget_type="trx_sc_icons.default">
+                                              <div class="elementor-widget-container">
+                                                <div id="trx_sc_icons_1662694993" class="sc_icons sc_icons_default sc_icons_size_medium sc_align_center">
+                                                  <div class="sc_icons_columns_wrap sc_item_columns trx_addons_columns_wrap columns_padding_bottom">
+                                                    <div class="trx_addons_column-1_3">
+                                                      <div class="sc_icons_item">
+                                                        <div class="sc_icons_icon sc_icons_char" data-char="01" style="background-color: #007382;">
+                                                          <span data-char="01"></span>
+                                                        </div>
+                                                        <div class="sc_icons_item_details">
+                                                          <h4 class="sc_icons_item_title">
+                                                            <span>We Value The Pursuit Of God</span>
+                                                          </h4>
+                                                          <div class="sc_icons_item_description">
+                                                            <span>We thirst for His presence and to know more of Him through private and public worship, the Word and prayer</span>
+                                                            <span></span>
+                                                            <span>
+                                                              <b>Psalm 42:1-2, 63:1-3; Matt 5:23; Luke 6:21 <br>
+                                                              </b>
+                                                            </span>
+                                                            <b>
+                                                              <span></span>
+                                                            </b>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="trx_addons_column-1_3">
+                                                      <div class="sc_icons_item">
+                                                        <div class="sc_icons_icon sc_icons_char" data-char="02" style="background-color: #F46036;">
+                                                          <b>
+                                                            <span data-char="02"></span>
+                                                          </b>
+                                                        </div>
+                                                        <div class="sc_icons_item_details">
+                                                          <h4 class="sc_icons_item_title">
+                                                            <b>
+                                                              <span>We Value The Servant Leadership</span>
+                                                            </b>
+                                                          </h4>
+                                                          <div class="sc_icons_item_description">
+                                                            <b>
+                                                              <span>We thirst for His presence and to know more of Him through private and public worship, the Word and prayer </span>
+                                                              <span>
+                                                                <b>Psalm 42:1-2, 63:1-3; Matt 5:23; Luke 6:21 <br>
+                                                                </b>
+                                                              </span>
+                                                            </b>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="trx_addons_column-1_3">
+                                                      <div class="sc_icons_item">
+                                                        <div class="sc_icons_icon sc_icons_char" data-char="03" style="background-color: #4054B2;">
+                                                          <b>
+                                                            <b>
+                                                              <span data-char="03"></span>
+                                                            </b>
+                                                          </b>
+                                                        </div>
+                                                        <div class="sc_icons_item_details">
+                                                          <h4 class="sc_icons_item_title">
+                                                            <b>
+                                                              <b>
+                                                                <span>We Value Christlikeness</span>
+                                                              </b>
+                                                            </b>
+                                                          </h4>
+                                                          <div class="sc_icons_item_description">
+                                                            <b>
+                                                              <b>
+                                                                <span>We want to be like the Lord and savior in all conduct. We want to minister by serving people the way He did with compassion, under the power and anointing of the Holy Spirit. We shall convey the love, mercy and power of God through the ministry of the church.</span>
+                                                                <span></span>
+                                                                <span> Luke 14:16-20; John 20:21; Ephesians 5:2; Colossians 3:12</span>
+                                                              </b>
+                                                            </b>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <!-- /.sc_icons -->
+                                                <b>
+                                                  <b></b>
+                                                </b>
+                                              </div>
+                                              <b>
+                                                <b></b>
+                                              </b>
+                                            </div>
+                                            <b>
+                                              <b>
+                                                <div class="elementor-element elementor-element-bbaccab elementor-widget elementor-widget-spacer" data-id="bbaccab" data-element_type="widget" data-widget_type="spacer.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div class="elementor-spacer">
+                                                      <div class="elementor-spacer-inner"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </b>
+                                            </b>
+                                          </div>
+                                          <b>
+                                            <b></b>
+                                          </b>
+                                        </div>
+                                        <b>
+                                          <b></b>
+                                        </b>
+                                      </div>
+                                      <b>
+                                        <b></b>
+                                      </b>
+                                    </div>
+                                    <b>
+                                      <b></b>
+                                    </b>
+                                  </div>
+                                  <b>
+                                    <b></b>
+                                  </b>
+                                </section>
+                                <b>
+                                  <b>
+                                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-7acd1d8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7acd1d8" data-element_type="section">
+                                      <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row">
+                                          <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-4b626f9 sc_layouts_column_icons_position_left" data-id="4b626f9" data-element_type="column">
+                                            <div class="elementor-column-wrap elementor-element-populated">
+                                              <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-d5fe1b8 elementor-widget elementor-widget-spacer" data-id="d5fe1b8" data-element_type="widget" data-widget_type="spacer.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div class="elementor-spacer">
+                                                      <div class="elementor-spacer-inner"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-890eb21 elementor-widget elementor-widget-trx_sc_icons" data-id="890eb21" data-element_type="widget" data-widget_type="trx_sc_icons.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div id="trx_sc_icons_575604265" class="sc_icons sc_icons_default sc_icons_size_medium sc_align_center">
+                                                      <div class="sc_icons_columns_wrap sc_item_columns trx_addons_columns_wrap columns_padding_bottom">
+                                                        <div class="trx_addons_column-1_3">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="04" style="background-color: #1c99b9;">
+                                                              <span data-char="04"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Value The Mercy Of God</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>We shall always recognize in humility that all the goodness we receive from God is a result of His mercies, even those blessings we may regard as “rights” because of our relationship with Him as children. We shall therefore seek to extend mercy to another and to all who come under the ministry of the church.</span>
+                                                                <span> Psalm 52:8; Lamentation 3:22-23; Colossians 3:12; James 5:11</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="trx_addons_column-1_3">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="05" style="background-color: #600707;">
+                                                              <span data-char="05"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Value Godly Family Life</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>Where parents live as examples and cultivate an environment in which the spiritual, emotional and social growth of their children can be fully accomplished. </span>
+                                                                <span></span>
+                                                                <span>Deuteronomy 6:7; Proverbs 22:6; 2 Timothy 3:15</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="trx_addons_column-1_3">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="06" style="background-color: #f26837;">
+                                                              <span data-char="06"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Value Giving</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>We shall always recognize in humility that all the goodness we receive from God is a result of His mercies, even those blessings we may regard as “rights” because of our relationship with Him as children. We shall therefore seek to extend mercy to another and to all who come under the ministry of the church. </span>
+                                                                <span></span>
+                                                                <span>Psalm 52:8; Lamentation 3:22-23; Colossians 3:12; James 5:11</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <!-- /.sc_icons -->
+                                                  </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-8f6409a elementor-widget elementor-widget-spacer" data-id="8f6409a" data-element_type="widget" data-widget_type="spacer.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div class="elementor-spacer">
+                                                      <div class="elementor-spacer-inner"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </section>
+                                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-e13f43b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e13f43b" data-element_type="section">
+                                      <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row">
+                                          <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-eb7a1ba sc_layouts_column_icons_position_left" data-id="eb7a1ba" data-element_type="column">
+                                            <div class="elementor-column-wrap elementor-element-populated">
+                                              <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-392b046 elementor-widget elementor-widget-spacer" data-id="392b046" data-element_type="widget" data-widget_type="spacer.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div class="elementor-spacer">
+                                                      <div class="elementor-spacer-inner"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-3f4d37d elementor-widget elementor-widget-trx_sc_icons" data-id="3f4d37d" data-element_type="widget" data-widget_type="trx_sc_icons.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div id="trx_sc_icons_1820201306" class="sc_icons sc_icons_default sc_icons_size_medium sc_align_center">
+                                                      <div class="sc_icons_columns_wrap sc_item_columns trx_addons_columns_wrap columns_padding_bottom">
+                                                        <div class="trx_addons_column-1_3">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="07" style="background-color: #1595bf;">
+                                                              <span data-char="07"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Value Marital Fidelity</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>Where husband and wife can depend on each other to provide spiritual, emotional and intimate needs. </span>
+                                                                <span></span>
+                                                                <span>Proverbs 5:15-19; 1 Corinthians 7:3-5, Galatians 5:19-20; Hebrews 13:4</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="trx_addons_column-1_3">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="08" style="background-color: #600707;">
+                                                              <span data-char="08"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Value Personal And Corporate Integrity</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>and therefore shall deal and conduct our affairs truthfully and honestly such that the gospel of Jesus Christ shall not suffer any reproach because of our conduct. </span>
+                                                                <span></span>
+                                                                <span>2 Corinthians 13:8; Ephesians 4:15, 5:9; 6:14; James 5:12</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="trx_addons_column-1_3">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="09" style="background-color: aquamarine;">
+                                                              <span data-char="09"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Value Purposeful Singleness</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>where the uniqueness of being single (unmarried) should be used to bless the church. </span>
+                                                                <span></span>
+                                                                <span>Matthew 19:12c; 1 Corinthians 7:32-34</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <!-- /.sc_icons -->
+                                                  </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-11886e2 elementor-widget elementor-widget-spacer" data-id="11886e2" data-element_type="widget" data-widget_type="spacer.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div class="elementor-spacer">
+                                                      <div class="elementor-spacer-inner"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </section>
+                                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-1cddbfb elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1cddbfb" data-element_type="section">
+                                      <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row">
+                                          <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-25da741 sc_layouts_column_icons_position_left" data-id="25da741" data-element_type="column">
+                                            <div class="elementor-column-wrap elementor-element-populated">
+                                              <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-0b8f406 elementor-widget elementor-widget-spacer" data-id="0b8f406" data-element_type="widget" data-widget_type="spacer.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div class="elementor-spacer">
+                                                      <div class="elementor-spacer-inner"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-9193917 elementor-widget elementor-widget-trx_sc_icons" data-id="9193917" data-element_type="widget" data-widget_type="trx_sc_icons.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div id="trx_sc_icons_1932321059" class="sc_icons sc_icons_default sc_icons_size_medium sc_align_center">
+                                                      <div class="sc_icons_columns_wrap sc_item_columns trx_addons_columns_wrap columns_padding_bottom">
+                                                        <div class="trx_addons_column-1_3">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="10" style="background-color: #6EC1E4;">
+                                                              <span data-char="10"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Love Unity In The Body of Christ.</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>We Love Unity In The Body of Christ. We agree with the scriptures that all who believe in Jesus Christ as Lord and Savior belong to one body of Christ. We shall seek to maintain the unity with all such believers. </span>
+                                                                <span></span>
+                                                                <span>Psalm 133:1; Romans 12:5; Ephesians 4:3-6,13</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="trx_addons_column-1_3">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="11" style="background-color: #f26837">
+                                                              <span data-char="11"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Value The Church Of God As The Body Of Christ.</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>Our desire shall be to seek its good, growth and prosperity. </span>
+                                                                <span></span>
+                                                                <span>Matthew 16:18; Ephesians 3:9-11; 5:25-27; 1 Timothy 3:5</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="trx_addons_column-1_3">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="12" style="background-color: #0d0e44">
+                                                              <span data-char="12"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Value Simplicity</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>and desire to do nothing in our private and public worship just for “effects” and “showing off”. </span>
+                                                                <span></span>
+                                                                <span>Philippians 2:3; Colossians 3:17</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <!-- /.sc_icons -->
+                                                  </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-3288c75 elementor-widget elementor-widget-spacer" data-id="3288c75" data-element_type="widget" data-widget_type="spacer.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div class="elementor-spacer">
+                                                      <div class="elementor-spacer-inner"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </section>
+                                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-792c3b7 elementor-section-boxed elementor-section-height-default elementor-section-height-default">
+                                      <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row">
+                                          <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-33225ae sc_layouts_column_icons_position_left" data-id="33225ae" data-element_type="column">
+                                            <div class="elementor-column-wrap elementor-element-populated">
+                                              <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-2dba54c elementor-widget elementor-widget-spacer" data-id="2dba54c" data-element_type="widget" data-widget_type="spacer.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div class="elementor-spacer">
+                                                      <div class="elementor-spacer-inner"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-be6ab74 elementor-widget elementor-widget-trx_sc_icons" data-id="be6ab74" data-element_type="widget" data-widget_type="trx_sc_icons.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div id="trx_sc_icons_874568112" class="sc_icons sc_icons_default sc_icons_size_medium sc_align_center">
+                                                      <div class="sc_icons_columns_wrap sc_item_columns trx_addons_columns_wrap columns_padding_bottom">
+                                                        <div class="trx_addons_column-1_2">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="13" style="background-color: rgba(79, 15, 79, 0.766);">
+                                                              <span data-char="13"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Value The Individual Members Of The Church</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>and shall seek to treat one another with respect and appropriate courtesy irrespective of gender, social and physical status. We shall seek to help members to grow in the grace and to fully realize their God given potentials. </span>
+                                                                <span></span>
+                                                                <span>John 13:35, Romans 12: 9-10, Galatians 6:10, Thessalonians 3:12, Colossians 3:12-14.</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="trx_addons_column-1_2">
+                                                          <div class="sc_icons_item">
+                                                            <div class="sc_icons_icon sc_icons_char" data-char="14" style="background-color: rgb(22, 92, 243)">
+                                                              <span data-char="14"></span>
+                                                            </div>
+                                                            <div class="sc_icons_item_details">
+                                                              <h4 class="sc_icons_item_title">
+                                                                <span>We Value Modesty In Our Lifestyle</span>
+                                                              </h4>
+                                                              <div class="sc_icons_item_description">
+                                                                <span>We shall seek to be generous and gracious in our speech, firm in our convictions and chaste in our dressing. </span>
+                                                                <span></span>
+                                                                <span>Galatians 5:26; Philippians 2:3; 1 Timothy 4:14; 1 Peter 3:3-4; 1 John 2:15-17</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <!-- /.sc_icons -->
+                                                  </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-d7e1088 elementor-widget elementor-widget-spacer" data-id="d7e1088" data-element_type="widget" data-widget_type="spacer.default">
+                                                  <div class="elementor-widget-container">
+                                                    <div class="elementor-spacer">
+                                                      <div class="elementor-spacer-inner"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </section>
+                                  </b>
+                                </b>
+                              </div>
+                              <b>
+                                <b></b>
+                              </b>
+                            </div>
+                            <b>
+                              <b></b>
+                            </b>
+                          </div>
+                          <b>
+                            <b></b>
+                          </b>
+                        </div>
+                        <b>
+                          <b></b>
+                        </b>
+                      </div>
+                      <b>
+                        <b></b>
+                      </b>
+                    </section>
+                    <b>
+                      <b></b>
+                    </b>
+                  </div>
+                  <b>
+                    <b></b>
+                  </b>
+                </div>
+                <b>
+                  <b></b>
+                </b>
+              </div>
+              <b>
+                <b></b>
+              </b>
+            </div>
+            <!-- .entry-content -->
+            <b>
+              <b></b>
+            </b>
+          </article>
+          <b>
+            <b></b>
+          </b>
+        </div>
+        <!-- </.content> -->
+        <b>
+          <b></b>
+        </b>
+      </div>
+      <!-- </.content_wrap> -->
+      <b>
+        <b></b>
+      </b>
+      </div>
+
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-0ec0c48 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" style="background-color: #1c99b9;">
+        <div class="elementor-container elementor-column-gap-extended">
+          <div class="elementor-row">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-58443be sc_layouts_column_icons_position_left" data-id="58443be" data-element_type="column">
+              <div class="elementor-column-wrap elementor-element-populated">
+                <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-42835ce elementor-widget elementor-widget-spacer" data-id="42835ce" data-element_type="widget" data-widget_type="spacer.default">
+                    <div class="elementor-widget-container">
+                      <div class="elementor-spacer">
+                        <div class="elementor-spacer-inner"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="elementor-element elementor-element-93217b0 elementor-widget elementor-widget-trx_sc_title" data-id="93217b0" data-element_type="widget" data-widget_type="trx_sc_title.default">
+                    <div class="elementor-widget-container">
+                      <div id="trx_sc_title_1230502800" class="sc_title sc_title_default">
+                        <h2 class="sc_item_title sc_title_title sc_align_center sc_item_title_style_default trx_addons_inline_1658768911">
+                          <span class="sc_item_title_text">Helping people know Jesus, grow in faith &amp; go into the world equipped to serve.</span>
+                        </h2>
+                      </div>
+                      <!-- /.sc_title -->
+                    </div>
+                  </div>
+                  <div class="elementor-element elementor-element-35db931 elementor-widget elementor-widget-spacer" data-id="35db931" data-element_type="widget" data-widget_type="spacer.default">
+                    <div class="elementor-widget-container">
+                      <div class="elementor-spacer">
+                        <div class="elementor-spacer-inner"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <footer style="font-size: 16px;">
+        <div>
+             <span class="logo"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "></span>
+        </div>
+    
+        <div class="row">
+             <div class="kol">                
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Get in Touch</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href=""><span><i class="fa fa-inbox"></i> info@rccgmobile.org</span></a></li>
+                     <li><a href=""><span><i class="fa fa-phone"></i> +251-378-5182</span></a></li>
+                 </ul>
+             </div>
+             <div class="kol">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Home</span>
+                 </div>
+                <ul class="footer-cat-links" style="margin: 0 0em 0px 0em;">
+                     <li><a href="{{ url_for('history') }}"><span>Our History</span></a></li>
+                     <li><a href="{{ url_for('service') }}"><span>Our Services</span></a></li>
+                     <li><a href="{{ url_for('mission') }}"><span>Our Mission</span></a></li>
+                     <li><a href="{{ url_for('pr') }}"><span>Our Priorities</span></a></li>
+                     <li><a id="values-link" href="{{ url_for('values') }}" style="cursor: pointer; pointer-events: all;">Our Values</a></li>
+                     <li><a href="{{ url_for('pastor') }}"><span>Our Pastor</span></a></li>
+                    
+                </ul>
+             </div>
+             <div class="kol">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Quick Links</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href="{{ url_for('donate') }}"><span>Donate</span></a></li>
+                     <li><a href="{{ url_for('vid') }}"><span>Video Sermon</span></a></li>
+                     <li><a href="{{ url_for('pod') }}"><span>Podcast Sermon</span></a></li>
+                     <li><a href="{{ url_for('activities') }}"><span>Activities</span></a></li>
+                     <li><a href="{{ url_for('gallery') }}"><span>Gallery</span></a></li>
+                     <li><a href="{{ url_for('contact') }}"><span>Contact Us</span></a></li>
+                 </ul>
+             </div>
+             <div class="kol" id="newsletter">
+                 <span> RCCG Jesus House Mobile.</span>
+                 <form id="subscribe">
+                     <input type="email" id="subscriber-email" placeholder="Enter Email Address"/>
+                     <input type="submit" value="Subscribe" id="btn-scribe"/>
+                 </form>
+                 
+                 <div class="social-links social-2">
+                     <a href=""><i class="fa fa-facebook-f"></i></a>
+                     <a href=""><i class="fa fa-twitter"></i></a>
+                     <a href=""><i class="fa fa-youtube"></i></a>
+                     
+                 </div>
+    
+                 <div id="address">
+                     <span>Church Location</span>
+                     <ul>
+                         <li>
+                             <i class="fa fa-building"></i>
+                             
+                                444 Azalea Rd, Ste C, Mobile, AL 36609
+                         </li>
+                         
+                     </ul>
+                 </div>
+                 
+             </div>
+             <div class="social-links social-1 colu">
+                 <a href=""><i class="fa fa-facebook-f"></i></a>
+                 <a href=""><i class="fa fa-twitter"></i></a>
+                 <a href=""><i class="fa fa-youtube"></i></a>
+                 
+             </div>
+        </div>
+        <div id="copyright">
+            &copy; 2024 All Rights Reserved. RCCG Jesus House Mobile.
+        </div>
+     
+     </footer>
+
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#bar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
+
+    <script>
+        function footerToggle(footerBtn) {
+            $(footerBtn).toggleClass("btnActive");
+            $(footerBtn).next().toggleClass("active");
+        }
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true,
+                spaceBetween: 50,
+                speed: 1000,
+                effect: 'fade',
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 50) {
+                    $('.nav').addClass('affix');
+                    console.log("OK");
+                } else {
+                    $('.nav').removeClass('affix');
+                }
+            });
+
+            $(window).on('load ', function () {
+                $('.loader').fadeOut(3000);
+            });
+            
+        
+
+
+            $('.navTrigger').click(function () {
+                $(this).toggleClass('active');
+                console.log("Clicked menu");
+                $("#mainListDiv").toggleClass("show_list");
+                $("#mainListDiv").fadeIn();
+            });
+
+            function checkVisible() {
+                var windowHeight = $(window).height();
+                var scrollPos = $(document).scrollTop();
+
+                $('.equal-height').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+                $('.ns').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+            }
+
+            // Initial check
+            checkVisible();
+
+            // Check when scrolling
+            $(document).scroll(function () {
+                checkVisible();
+            });
+
+        });
+
+    </script>
+    <script>
+      // Back to top
+      var amountScrolled = 200;
+      var amountScrolledNav = 25;
+
+      $(window).scroll(function() {
+        if ( $(window).scrollTop() > amountScrolled ) {
+          $('button.back-to-top').addClass('show');
+        } else {
+          $('button.back-to-top').removeClass('show');
+        }
+      });
+
+      $('button.back-to-top').click(function() {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    </script>
+</body>
+</html>

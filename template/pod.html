@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="rlogo.png">
+</head>
+<style>
+    #mainNavbar {
+    }
+
+    .navbar-dark .navbar-brand {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar-nav .nav-link {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .display-4 {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .lead {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .navbar.scrolled {
+        background: rgb(34, 31, 31);
+        transition: background 500ms;
+    }
+
+    .font-weight-light {
+        font-family: 'Source Serif Pro', serif;
+    }
+
+    .pt {
+        color: #222;
+        font-family: montserrat, Sans-serif;
+        
+        line-height: 1.2em;
+    }
+
+    h2 {
+        font-family: fjalla one, sans-serif;
+        font-size: 3.5em;
+        
+        font-style: normal;
+        line-height: 1.23em;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 6.15rem;
+        margin-bottom: 2.1rem;
+    }
+    .equal-height {
+        opacity: 0;
+        transform: translateY(90px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .equal-height.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .ns {
+        opacity: 0;
+        transform: translateX(80px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .ns.fade-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hs-responsive-embed-youtube {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        padding-top: 25px;
+    }
+    .hs-responsive-embed-youtube iframe {
+        position: absolute;
+        width: 100%!important;
+        height: 100%!important;
+    }
+
+    .payment-box{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-color: #1B998B;
+  border-radius: 2.5rem;
+  box-shadow: 0.25rem 0.25rem 1rem 0.5rem #1D1A30;
+  
+  
+  /*Size settings*/
+  min-height: 20rem;
+  max-width: 20rem;
+  
+  /*Content align*/
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.payment-title{  
+  font-weight:bold;
+  font-size: 2rem;
+  color: #C5D86D;
+}
+
+.lock-handle-outer{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-bottom: none;
+  border-color: #1B998B;
+  border-radius: 1rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.2rem #1D1A30;
+  
+  /*Size settings*/
+  min-height: 10rem;
+  max-width: 15rem;
+  
+  /*Content align*/
+  justify-content: center;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.lock-handle-inner{
+  /*Border settings*/
+  border: 0.35rem solid;
+  border-bottom: none;
+  border-color: #1B998B;
+  border-radius: 1rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.2rem #1D1A30;
+  
+  /*Size settings*/
+  min-height: 10rem;
+  max-width: 8rem;
+  
+  /*Content align*/
+  justify-content: bottom;
+  margin: auto;
+  vertical-align:bottom;
+}
+
+/*Buttons*/
+.donate-btn{  
+  /*Size settings*/
+  min-width:15rem;
+  min-height:3rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #1B998B;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem #1D1A30;
+  
+  /*Text settings*/
+  font-weight:bold;
+  font-size: 1rem;
+  color: #C5D86D;
+  cursor:pointer;
+  
+}
+
+.donate-btn:hover{
+  background-color: #C5D86D;
+  color:#F46036;
+  transition: 0.1s;
+  box-shadow: 0.1rem 0.1rem 1rem 0.5rem #1D1A30;
+}
+.donate-btn:active{
+  background-color: #1D1A30;
+  color:#F46036;
+  transition: 0.1s;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem #1D1A30;
+}
+
+/*Key hole items*/
+
+.key-hole{
+  /*Circle*/
+  border: 0.35rem solid;;
+  border-color: #1B998B;
+  border-bottom: 0rem;
+  width: 3rem;
+  min-height:3rem;
+  border-radius: 2rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem 1rem #1D1A30;
+  
+  
+  /*Content align*/
+  margin: auto;
+  vertical-align:middle;
+}
+
+.key-box{
+  /*Triangle*/
+  border: 0.35rem solid;;
+  border-color: #1B998B;
+  border-top: 0rem;
+  width: 2rem;
+  min-height:3rem;
+  border-radius: 1rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem 0.5rem #1D1A30;
+  
+  
+  /*Content align*/
+  margin: auto;
+  vertical-align:middle;
+}
+
+
+.keyarea{
+  padding: 1rem;
+}
+
+
+
+
+
+
+.dropbtn {
+  background: transparent;
+  color: white;
+  
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 30%;
+  border-radius: 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {color: rgb(255, 189, 17);}
+
+
+.donate {
+  background: #005068;
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%), -webkit-linear-gradient(left, #1595bf 0%, #0e7d91 50%, #147995 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%), linear-gradient(to right, #1c7a8f 0%, #2f6b83 50%, #1e84ad 100%);
+  background-position: 0 0;
+  background-size: 200% 100%;
+  border-radius: 4px;
+  color: #fff;
+  padding: 15px 65px 15px 15px;
+  text-shadow: 1px 1px 5px #666;
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
+}
+.donate:after {
+  border-left: 1px solid #1c99b9;
+  color: #003527;
+  content: "\f004";
+  font: 20px "FontAwesome";
+  padding: 10px 0;
+  padding-left: 15px;
+  position: absolute;
+  right: 16px;
+  top: 7px;
+  -webkit-transition: all 600ms 200ms;
+  transition: all 600ms 200ms;
+}
+.donate:hover {
+  background-position: -100% 0;
+  color: white;
+}
+.donate:hover:after {
+  border-left: 1px solid #007382;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: no-repeat black;
+    
+}
+  
+
+.u-loading {
+	width: 128px;
+	height: 128px;
+	
+	margin: 48px;
+     
+}
+.u-loading__symbol {
+	background-color: transparent;
+	padding: 8px;
+	animation: loading 3s infinite;
+	border-radius: 5px;
+     
+}
+.u-loading__symbol img {
+     
+    left: 0px;
+	display: block;
+	max-width: 100%;
+	animation: loading-icon 3s infinite;
+  
+}
+ @keyframes loading {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 background-color: transparent;
+	}
+	 16% {
+		 background-color: transparent;
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+		 background-color: transparent;
+	}
+	 65% {
+		 background-color: transparent;
+	}
+	 66% {
+		 background-color: transparent;
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(-180deg);
+	}
+}
+ @keyframes loading-icon {
+	 0% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 15% {
+		 transform: perspective(250px) rotateX(0deg) rotateY(0deg);
+	}
+	 16% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 50% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 65% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(0deg);
+	}
+	 66% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+	 100% {
+		 transform: perspective(250px) rotateX(180deg) rotateY(180deg);
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--color-light: #ebeae6;
+	--album-size: 580px;
+}
+
+
+header {
+	width: 100%;
+	padding: 48px 5vw 8px;
+	color: var(--color-light);
+	display: flex;
+	place-content: center;
+	font-size: 24px;
+	z-index: 100;
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+.secs {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	/*    overflow: hidden;*/
+	position: relative;
+	margin: 40px 0;
+
+}
+
+.hero-img {
+	background-position: center center;
+	background-size: cover;
+	width: var(--album-size);
+	height: 100%;
+	aspect-ratio: 1/1;
+	position: absolute;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.hero-img:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+
+.button-container {
+	padding: 8px 5vw 24px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+}
+
+.nav-arrow {
+	font-family: "Cormorant", "Bebas Neue", Helvetica Neue, Arial, sans-serif;
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease;
+	height: 56px;
+	background: none;
+	border: none;
+	color: var(--color-light);
+	opacity: 0.3;
+	font-weight: 500;
+	text-transform: lowercase;
+}
+
+.nav-arrow span {
+	width: 80px;
+	height: 2px;
+	background: var(--color-light);
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 32px;
+}
+
+.nav-arrow span:before,
+.nav-arrow span:after,
+.nav-arrow span {
+	transition: all 0.3s ease;
+}
+
+.nav-arrow span:before {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--color-light);
+	left: 4px;
+	transform: rotate(-45deg);
+	border-bottom: none;
+	border-right: none;
+}
+
+.nav-arrow span:after {
+	content: "";
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border: 2px solid var(--color-light);
+	right: -14px;
+}
+
+/* Arrowhead hover effect */
+.nav-arrow:hover span:before,
+.key-press-hover-left span:before,
+.key-press-hover-right span:before {
+	width: 32px;
+	height: 32px;
+}
+
+/* Arrowcircle hover effect */
+.nav-arrow:hover span:after,
+.key-press-hover-left span:after,
+.key-press-hover-right span:after {
+	width: 48px;
+	height: 48px;
+	right: -26px;
+}
+
+/* Arrow body hover effect */
+.nav-arrow:hover span,
+.key-press-hover-left span,
+.key-press-hover-right span {
+	width: 72px;
+}
+
+/* Prev circle */
+.scroll-left:hover span,
+.key-press-hover-left span {
+	margin-right: 48px;
+}
+
+/* Next circle */
+.scroll-right:hover span,
+.key-press-hover-right span {
+	margin-left: 48px;
+}
+
+/* Flips next arrow */
+.scroll-right span {
+	margin-left: 32px;
+	margin-right: 0;
+	transform: rotateY(180deg);
+}
+
+/* Overwrite margin right 0 of next circle */
+.key-press-hover-right span {
+	margin-left: 48px;
+}
+
+/* Arrow text hover effer */
+.nav-arrow:hover,
+.key-press-hover-left,
+.key-press-hover-right {
+	opacity: 1;
+	cursor: pointer;
+	font-size: 22px;
+}
+
+h1 {
+	font-family: "Cormorant", "Bebas Neue", Helvetica Neue, Arial, sans-serif;
+	color: var(--color-light);
+	font-size: 96px;
+	width: 90vw;
+	max-width: 980px;
+	display: flex;
+	flex-direction: column;
+	white-space: nowrap;
+	align-items: center;
+	font-weight: 500;
+	line-height: 130%;
+	z-index: 2;
+	position: relative;
+	text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+	opacity: 0.8;
+	bottom: -20%;
+	transform-origin: center;
+}
+
+.album-num {
+	position: absolute;
+	left: 0;
+	top: -18px;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1;
+	text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 span {
+	width: 100%;
+}
+
+.album-title {
+	text-align: left;
+	position: relative;
+}
+
+h1 span:last-of-type {
+	text-align: right;
+}
+
+.emblem-container {
+	--emblem-size: 280px;
+	height: var(--emblem-size);
+	width: var(--emblem-size);
+	position: absolute;
+	z-index: 2;
+	transform: translate(calc(var(--album-size) / 2), -40%);
+}
+
+.emblem {
+	font-size: 24px;
+	color: var(--color-light);
+	text-transform: lowercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform-origin: center center;
+	animation: rotating 10s linear infinite;
+	height: 100%;
+	width: 100%;
+	text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes rotating {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Each letter of emblem */
+.emblem span {
+	position: absolute;
+	display: flex;
+	height: inherit;
+	width: 0;
+	justify-content: center;
+	align-items: flex-end;
+	transform-origin: center center;
+	width: 20px;
+	text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+.emblem,
+h1 {
+	opacity: 0;
+}
+
+h1 {
+	transform: translateY(15%);
+}
+
+.album-transition {
+	animation: 0.6s ease-out album-transition;
+}
+
+.show-texts {
+	opacity: 1;
+	transform: translateY(0px);
+	transition-property: opacity, transform;
+	transition-duration: 1.4s, 0.5s;
+}
+
+.hide-arrow {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.spotify-widget {
+	width: var(--album-size);
+	z-index: 100;
+	margin-bottom: 8px;
+}
+
+.spotify-widget iframe {
+	border-radius: 12px;
+}
+
+@keyframes album-transition {
+	from {
+		clip-path: inset(0 100% 0 0);
+	}
+
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	:root {
+		--album-size: 80vw;
+	}
+
+	.hero-img {
+		height: 100%;
+	}
+
+	h1 {
+		font-size: 80px;
+	}
+	.spotify-widget {
+		margin-bottom: 24px;
+	}
+}
+
+@media only screen and (max-height: 800px) {
+	h1 {
+		font-size: 72px;
+	}
+}
+
+@media only screen and (max-height: 740px) {
+	h1 {
+		font-size: 64px;
+		width: 60vw;
+	}
+	.emblem-container {
+		--emblem-size: 200px;
+	}
+	.emblem {
+		font-size: 20px;
+	}
+	.button-container {
+		padding: 8px 5vw 8px;
+	}
+	.spotify-widget {
+		margin-bottom: 0px;
+	}
+}
+
+.slider-container {
+    min-height: 60%;
+}
+
+.sc_services_item_text:hover{
+    color: white;
+}
+
+.slider-title {
+            
+            margin-top: 70%;
+        }
+    @media only screen and (min-width : 1024px) {
+     
+        .slider-title {
+            font-size: 70px;
+            margin-top: 15%;
+        }
+        .dropdown-content {
+            width: 200px;
+        }
+    }
+
+    .affix {
+    padding: 10px;
+   
+    background-color: #3c3b3b;
+    min-height: 10%;
+   
+}
+.slide-2{
+    background-image: url('pod.jpg');
+}
+
+</style>
+<body>
+    <nav id="bar" class=" fixed-top">
+        <nav class="nav">
+            <div class="" style="min-width: 100%;">
+                <div class="logo">
+                    <a href="#"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "  width="100" height="5"></a>
+                </div>
+                
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks" >
+                        <li><a href="{{ url_for('index') }}" style="font-size: 18px;">Home</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Who are we</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('history') }}"  style="color: black; font-size: 52%">Our History</a>
+                                  <a href="{{ url_for('service') }}"  style="color: black; font-size: 52%">Our Services</a>
+                                  <a href="{{ url_for('mission') }}"  style="color: black; font-size: 52%">Our Mission</a>
+                                  <a href="{{ url_for('values') }} "  style="color: black; font-size: 52%">Our Values</a>
+                                  <a href="{{ url_for('pr') }}"    style="color: black; font-size: 52%">Our Priorities</a>
+                                  <a href="{{ url_for('pastor') }}"  style="color: black; font-size: 52%">Our Pastor</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Sermon</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('vid') }}" target="tab" style="color: black; font-size: 52%">Video Sermon</a>
+                                  <a href="{{ url_for('pod') }}" target="tab" style="color: black; font-size: 52%">Podcast Sermon</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn" style="font-size: 18px;">Connect</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url_for('prreq') }}" target="tab" style="color: black; font-size: 52%">Prayer request</a>
+                                  <a href="{{ url_for('ytlive') }}" target="tab" style="color: black; font-size: 52%">Live streaming</a>
+                                  <a href=" {{ url_for('activities') }}" target="tab" style="color: black; font-size: 52%">Activities</a>
+                                  
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="{{ url_for('contact') }}" target="tab" style="font-size: 18px;">Contact</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="" style="float: right;">
+                   
+                    <button><a href="{{ url_for('donate') }}" style="color: black; text-decoration: none;">Donate</a></button>
+                    
+                </div>
+
+                <span class="navTrigger" style="margin-top: 6%; margin-right: 23%;">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>
+    </nav>
+
+
+    <section>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper" style="background-size: cover;">
+                <!-- Slides -->
+              
+                <div class="swiper-slide slide-2">
+                    <div class="container">
+                        <div class="slider-container">
+                            <div class="animated-area">
+                                <p class="slider-title cssanimation sequence leFadeInLeft pt" style="color: white;">Podcast Sermons</p>
+                            </div>
+                        </div>
+                        <div id="space">
+
+                        </div>
+                    </div>
+                </div>
+         
+                <!-- ... Other slides go here ... -->
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev" style="color: white;"></div>
+            <div class="swiper-button-next" style="color: white;"></div>
+        </div>
+    </section>
+    
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#bar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
+
+
+
+    <header>RCCG Mobile</header>
+    <section class="secs">
+        <div class="hero-img"></div>
+    
+        <div class="emblem-container">
+            <div class="emblem text"></div>
+        </div>
+        <h1 class="text" value="6">
+            <span class="album-num"></span>
+            <span class="album-title"></span>
+        </h1>
+    </section>
+    <div style="display: flex; justify-content: center;">
+    <div class="spotify-widget">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/16ChUZtD5KKlEv1AKgL3Cn?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    </div>
+    <div class="button-container">
+        <button class="scroll-left nav-arrow"><span></span>Prev.</button>
+        <button class="scroll-right nav-arrow">Next<span></span></button>
+    </div>
+    
+    <footer style="font-size: 16px;">
+        <div>
+             <span class="logo"><img src="src=“{{url_for(‘static’, filename=‘rlogo.png’)}}” "></span>
+        </div>
+    
+        <div class="row">
+             <div class="kol">                
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Get in Touch</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href=""><span><i class="fa fa-inbox"></i> info@rccgmobile.org</span></a></li>
+                     <li><a href=""><span><i class="fa fa-phone"></i> +251-378-5182</span></a></li>
+                 </ul>
+             </div>
+             <div class="kol">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Home</span>
+                 </div>
+                <ul class="footer-cat-links" style="margin: 0 0em 0px 0em;">
+                     <li><a href="{{ url_for('history') }}"><span>Our History</span></a></li>
+                     <li><a href="{{ url_for('service') }}"><span>Our Services</span></a></li>
+                     <li><a href="{{ url_for('mission') }}"><span>Our Mission</span></a></li>
+                     <li><a href="{{ url_for('pr') }}"><span>Our Priorities</span></a></li>
+                     <li><a id="values-link" href="{{ url_for('values') }}" style="cursor: pointer; pointer-events: all;">Our Values</a></li>
+                     <li><a href="{{ url_for('pastor') }}"><span>Our Pastor</span></a></li>
+                    
+                </ul>
+             </div>
+             <div class="kol">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Quick Links</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href="{{ url_for('donate') }}"><span>Donate</span></a></li>
+                     <li><a href="{{ url_for('vid') }}"><span>Video Sermon</span></a></li>
+                     <li><a href="{{ url_for('pod') }}"><span>Podcast Sermon</span></a></li>
+                     <li><a href="{{ url_for('activities') }}"><span>Activities</span></a></li>
+                     <li><a href="{{ url_for('gallery') }}"><span>Gallery</span></a></li>
+                     <li><a href="{{ url_for('contact') }}"><span>Contact Us</span></a></li>
+                 </ul>
+             </div>
+             <div class="kol" id="newsletter">
+                 <span> RCCG Jesus House Mobile.</span>
+                 <form id="subscribe">
+                     <input type="email" id="subscriber-email" placeholder="Enter Email Address"/>
+                     <input type="submit" value="Subscribe" id="btn-scribe"/>
+                 </form>
+                 
+                 <div class="social-links social-2">
+                     <a href=""><i class="fa fa-facebook-f"></i></a>
+                     <a href=""><i class="fa fa-twitter"></i></a>
+                     <a href=""><i class="fa fa-youtube"></i></a>
+                     
+                 </div>
+    
+                 <div id="address">
+                     <span>Church Location</span>
+                     <ul>
+                         <li>
+                             <i class="fa fa-building"></i>
+                             
+                                444 Azalea Rd, Ste C, Mobile, AL 36609
+                         </li>
+                         
+                     </ul>
+                 </div>
+                 
+             </div>
+             <div class="social-links social-1 colu">
+                 <a href=""><i class="fa fa-facebook-f"></i></a>
+                 <a href=""><i class="fa fa-twitter"></i></a>
+                 <a href=""><i class="fa fa-youtube"></i></a>
+                 
+             </div>
+        </div>
+        <div id="copyright">
+            &copy; 2024 All Rights Reserved. RCCG Jesus House Mobile.
+        </div>
+     
+     </footer>
+ 
+    <script>
+        function footerToggle(footerBtn) {
+            $(footerBtn).toggleClass("btnActive");
+            $(footerBtn).next().toggleClass("active");
+        }
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true,
+                spaceBetween: 50,
+                speed: 1000,
+                effect: 'fade',
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 50) {
+                    $('.nav').addClass('affix');
+                    console.log("OK");
+                } else {
+                    $('.nav').removeClass('affix');
+                }
+            });
+
+            $(window).on('load ', function () {
+                $('.loader').fadeOut(3000);
+            });
+            
+        
+
+
+            $('.navTrigger').click(function () {
+                $(this).toggleClass('active');
+                console.log("Clicked menu");
+                $("#mainListDiv").toggleClass("show_list");
+                $("#mainListDiv").fadeIn();
+            });
+
+            function checkVisible() {
+                var windowHeight = $(window).height();
+                var scrollPos = $(document).scrollTop();
+
+                $('.equal-height').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+                $('.ns').each(function () {
+                    var offset = $(this).offset().top;
+
+                    if (scrollPos + windowHeight - 50 > offset) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+            }
+
+            // Initial check
+            checkVisible();
+
+            // Check when scrolling
+            $(document).scroll(function () {
+                checkVisible();
+            });
+
+        });
+
+    </script>
+    <script>
+        const scrollLeft = document.querySelector(".scroll-left");
+        const scrollRight = document.querySelector(".scroll-right");
+        const heroDiv = document.querySelector(".hero-img");
+        const sectionContainer = document.querySelector("section");
+        const bodyContainer = document.querySelector("body");
+        const emblemDiv = document.querySelector(".emblem");
+        const albumTitleSpan = document.querySelector(".album-title");
+        const texts = document.querySelectorAll(".text");
+        const albumNum = document.querySelector(".album-num");
+        const spotifyWidget = document.querySelector(".spotify-widget iframe");
+        const albums = [
+            {
+                album: "RCCG Podcast",
+                emblem: "Praise And Worship",
+                "bg-color": ["#53254C", "#0D1827"],
+                "accent-color": "#7C2E70",
+                url:
+                    "pr.jpg",
+                spotify:
+                    "https://open.spotify.com/embed/album/16ChUZtD5KKlEv1AKgL3Cn?utm_source=generator"
+            },
+            {
+                album: "RCCG Podcast",
+                emblem: "Marathon Messaih's Praise",
+                "bg-color": ["#66493D", "#32130F"],
+                "accent-color": "#B4653C",
+                url: "",
+                spotify:
+                    "https://open.spotify.com/embed/track/40ZLAeIoO3yzni3lwSyMcj?utm_source=generator"
+            }
+           
+        ];
+
+        // Add Event Listeners
+        scrollLeft.addEventListener("click", () => handleClickScroll(-1));
+        scrollRight.addEventListener("click", () => handleClickScroll(1));
+        heroDiv.addEventListener("animationend", () => {
+            heroDiv.classList.remove("album-transition");
+            document.addEventListener("keydown", handleKeyScroll);
+            scrollLeft.disabled = false;
+            scrollRight.disabled = false;
+            scrollLeft.classList.remove("key-press-hover-left");
+            scrollRight.classList.remove("key-press-hover-right");
+
+            for (const text of texts) text.classList.add("show-texts");
+        });
+
+        // Event Listeners
+        const handleClickScroll = (val) => {
+            if (index + val >= 0 && index + val < albums.length) {
+                updateDisplay((index += val));
+            }
+        };
+
+        const handleKeyScroll = (e) => {
+            if (e.key == "ArrowLeft") {
+                scrollLeft.classList.add("key-press-hover-left");
+                handleClickScroll(-1);
+            }
+            if (e.key == "ArrowRight") {
+                scrollRight.classList.add("key-press-hover-right");
+                handleClickScroll(1);
+            }
+        };
+
+        // Main Function
+        let index = 0;
+
+        const updateDisplay = (index) => {
+            // SET DELIMITER
+            let DELIMITER = "";
+
+            // delcare album specified by index
+            const album = albums[index];
+
+            // reset all animations and disable button
+            for (const text of texts) text.classList.remove("show-texts");
+            emblemDiv.innerHTML = "";
+            scrollLeft.disabled = true;
+            scrollRight.disabled = true;
+            document.removeEventListener("keydown", handleKeyScroll);
+
+            // add css classes, texts, and styles
+            sectionContainer.id = `hero-${album.album.toLowerCase().replace(" ", "-")}`;
+            bodyContainer.style.background = `linear-gradient(180deg, ${album["bg-color"][0]} 0%, ${album["bg-color"][1]} 100%)`;
+            heroDiv.style.backgroundImage = `url(${album.url})`;
+            albumTitleSpan.textContent = album.album;
+            albumTitleSpan.style.fontSize = '29px'
+            spotifyWidget.src = album.spotify;
+
+            const number = albums.length - index;
+          
+
+            // hide arrows
+            if (index === 0) scrollLeft.classList.add("hide-arrow");
+            else scrollLeft.classList.remove("hide-arrow");
+
+            if (index === 9) scrollRight.classList.add("hide-arrow");
+            else scrollRight.classList.remove("hide-arrow");
+
+            // create emblem
+            createEmblem(album.emblem, DELIMITER[0] || undefined).forEach((node) =>
+                emblemDiv.append(node)
+            );
+
+            // add final animations
+            heroDiv.classList.add("album-transition");
+        };
+
+        const createEmblem = (string, delimiter = "•") => {
+            const spans = [];
+
+            string = string.trim().replaceAll(" ", delimiter) + delimiter;
+            const numChars = string.length;
+            const degVal = 90 / (numChars / 4);
+
+            string.split("").forEach((char, idx) => {
+                const span = document.createElement("span");
+                span.innerText = char;
+                span.style.transform = `rotate(${180 - degVal * idx}deg)`;
+                if (char === delimiter) span.style.color = albums[index]["accent-color"];
+                spans.push(span);
+            });
+
+            return spans;
+        };
+
+        // Start Script
+        updateDisplay(index);
+
+    </script>
+        <script>
+            // Back to top
+            var amountScrolled = 200;
+            var amountScrolledNav = 25;
+      
+            $(window).scroll(function() {
+              if ( $(window).scrollTop() > amountScrolled ) {
+                $('button.back-to-top').addClass('show');
+              } else {
+                $('button.back-to-top').removeClass('show');
+              }
+            });
+      
+            $('button.back-to-top').click(function() {
+              $('html, body').animate({
+                scrollTop: 0
+              }, 800);
+              return false;
+            });
+        </script>
+</body>
+</html>
